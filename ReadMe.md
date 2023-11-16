@@ -16,13 +16,13 @@ Recomendo assistir ao vídeo introdutório abaixo:
 
 Os vídeos tutoriais estão disponíveis no YouTube e podem ser acessados através do links para a playlist abaixo:
 
-O código do jogo está neste mesmo repositório, na pasta [Jogo](Jogo/ReadMe.md).
+O código do jogo está neste mesmo repositório, na pasta [Jogo](Jogo/).
 
-Os recursos para o tutorial se encontram na pasta [Recursos](Recursos/ReadMe.md), onde você encontra detalhes de diagramas, bibliotecas usadas, links para cursos de base, além de outras informações.
+Os recursos para o tutorial se encontram na pasta [Recursos](Recursos/), onde você encontra detalhes de diagramas, bibliotecas usadas, links para cursos de base, além de outras informações.
 
-Além disso, para quem quer adaptar a base de dados para si, na pasta [BaseVazia](Recursos/BaseVazia/ReadMe.md), você encontra uma base que contém somente as tabelas, mas sem a informação, para adicionar a informação que quiser.
+Além disso, para quem quer adaptar a base de dados para si, na pasta [BaseVazia](Recursos/BaseVazia/), você encontra uma base que contém somente as tabelas, mas sem a informação, para adicionar a informação que quiser.
 
-A pasta [DBModelagem](Recursos/DBModelagem/ReadMe.md) possui o modelo da base de dados em formato .mwb, além de arquivo com o DDL da base para quem quiser montar a base do zero e dois arquivos de ajuda para popular os continentes e países com sua configuração em Outubro de 2023.
+A pasta [DBModelagem](Recursos/DBModelagem/) possui o modelo da base de dados em formato .mwb, além de arquivo com o DDL da base para quem quiser montar a base do zero e dois arquivos de ajuda para popular os continentes e países com sua configuração em Outubro de 2023.
 
 ### O Projeto
 

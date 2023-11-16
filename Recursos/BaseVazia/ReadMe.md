@@ -1,0 +1,1 @@
+Base SQLite Vazia com as tabelas criadas, mas sem os dados.
