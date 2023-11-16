@@ -1,0 +1,1 @@
+Modelo da Base de Dados do MySQL Workbench e arquivos com o DDL da base e de ajuda para popular os continentes e países com sua configuração em Outubro de 2023.
