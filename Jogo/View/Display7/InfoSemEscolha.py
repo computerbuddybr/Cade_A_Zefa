@@ -11,16 +11,11 @@ class InfoSemEscolha:
         :param info: O texto que precisa mostrar
         """
         self.janela = janela
-        self.titulo = ""
+        self.tituloTexto = ""
         self.info = []
 
         # Variável de controle
         self.on = False
-
-
-        # self.mostrarInstrucoes()
-        #
-        # self.criandoBotoes()
 
 
 

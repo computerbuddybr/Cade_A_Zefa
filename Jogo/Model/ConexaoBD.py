@@ -58,88 +58,26 @@ class ConexaoBD:
             return self.erro
 
 
-    def lerDadosParametrizados(self, sqlParametrizado, parametros):
+    def lerDadosParam(self, sqlParametrizado, parametros):
         """
         Com os atributos cursor faremos a busca (query) na base de dados
 
-        :param: sqlParametrizado: sql já com os placeholders para os paramêtros. Ex: "select * from tabela where id = %s"
+        :param: sqlParametrizado: sql já com os placeholders para os paramêtros. Ex: "select * from tabela where id = :id"
         :param: parametros: tupla com os parâmetros. Caso haja só um parâmetro, colocar entre parênteses e uma vírgula após o elemento para o Python entender que é uma tupla
         :return: resultados ou erro
         """
         if(self.conectado):
-            with self.conexao.cursor() as cursor:
-                cursor.execute(sqlParametrizado, parametros)
-                self.registros = cursor.fetchall()
+            try:
+                self.cursor.execute(sqlParametrizado, parametros)
+                self.registros = self.cursor.fetchall()
                 print("Os dados da base são: ")
                 print(self.registros)
                 return self.registros
+            except sqlite3.Error as erro:
+                self.erro = erro
+                print("Erro ao conectar ao sqlite", self.erro)
+                return self.erro
         else:
             print(f"A conexão não existe: {self.erro}")
             return False
-            # try:
-        #     self.cursor.execute(sqlParametrizado, parametros)
-        #     self.registros = self.cursor.fetchall()
-        #     print("Os dados da base são: ")
-        #     print(self.registros)
-        #     return self.registros
-        # except sqlite3.Error as erro:
-        #     self.erro = f"Erro ao conectar ao sqlite: {erro}"
-        #     print(self.erro)
-        #     return self.erro
 
-
-    def gravarDados(self, sql):
-        """
-        Grava um dado novo ou altera um dado na base de dado
-        Args:
-            sql: sql a ser inserido
-
-        Returns:
-            Booleano verdadeiro se sucesso e Falso se erro
-
-        """
-        try:
-            self.cursor.execute(sql)
-            self.ConexaoSQLite.commit()
-            print("Registro inserido com sucesso")
-            return True
-        except sqlite3.Error as erro:
-            self.erro = erro
-            print("Erro ao conectar ao sqlite", self.erro)
-            return False
-
-    #
-    # def gravarDadosParametrizados(self, sqlParametrizado, parametros):
-    #     """
-    #     Com os atributos cursor faremos a busca (query) na base de dados
-    #     :param:  sqlParametrizado: sql já com os placeholders para os paramêtros. Ex: "select * from tabela where id = %s"
-    #     :param:  parametros: tupla com os parâmetros. Caso haja só um parâmetro, colocar entre parênteses e uma vírgula após o elemento para o Python entender que é uma tupla
-    #     :return: resultados ou erro
-    #     """
-    #
-    #     try:
-    #         self.cursor.execute(sqlParametrizado, parametros)
-    #         self.ConexaoSQLite.commit()
-    #         print("Registro inserido com sucesso")
-    #         return True
-    #     except sqlite3.Error as erro:
-    #         self.erro = erro
-    #         print("Erro ao conectar ao sqlite", self.erro)
-    #         return False
-    #
-    # def fecharConexao(self):
-    #     """
-    #     Fecha a conexão com o banco de dados
-    #     :return: Booleano de sucesso (True) ou erro (False)
-    #     """
-    #     if self.ConexaoSQLite:
-    #         # Fecha o cursor
-    #         self.cursor.close()
-    #         # Fecha a conexão
-    #         self.ConexaoSQLite.close()
-    #         print("A conexao com o SQLite fechou")
-    #         return True
-    #     else:
-    #         return False
-    #
-    #

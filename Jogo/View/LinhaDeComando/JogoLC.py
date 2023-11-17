@@ -1,10 +1,11 @@
+from Controller.FluxoDeJogoLC import FluxoDeJogoLC
 class JogoLC:
     """
     Classe que cuida de como será feita a visualização do jogo na Linha de comando
     """
     def __init__(self):
-        pass
-
+        self.jogo = FluxoDeJogoLC(self)
+        self.jogo.jogar()
 
 
 

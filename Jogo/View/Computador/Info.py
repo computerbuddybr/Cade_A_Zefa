@@ -39,8 +39,8 @@ class Info:
         """
         self.titulo = Elementos.criarTitulo(self.janela, self.janela.frameJogo, titulo)
         self.info = Elementos.criarTexto(self.janela, self.janela.frameJogo, texto)
-        Elementos.posicionarTitulo(self.titulo,0)
-        Elementos.posicionarTexto(self.info, 1)
+        Elementos.posicionarTitulo(self.titulo)
+        Elementos.posicionarTexto(self.info)
 
 
 
@@ -60,10 +60,6 @@ class Info:
         """
         if self.on == True:
             Elementos.apagarElementoDaTela([self.titulo, self.info, self.botaoS, self.botaoD])
-            # self.titulo.grid_forget()
-            # self.info.grid_forget()
-            # self.botaoS.grid_forget()
-            # self.botaoD.grid_forget()
             self.on = False
 
 
@@ -74,8 +70,6 @@ class Info:
         :param texto: texto que precisa mostrar
         :return:
         """
-
-
         self.on = True
         self.mostrarInstrucoes(titulo, texto)
         self.criandoBotoes()
@@ -84,13 +78,12 @@ class Info:
         Cria os botões
         :return:
         """
-
         self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo", self.janela.jogo.novoJogo, Estilos.PRETO, Estilos.BRANCO)
 
         self.botaoD = Elementos.criarBotao(self.janela, "Desligar", self.janela.app.destroy, Estilos.VERMELHO, Estilos.BRANCO)
 
-        Elementos.posicionarBotao(self.botaoS, 0)
-        Elementos.posicionarBotao(self.botaoD, 1)
+        Elementos.posicionarBotao(self.botaoS)
+        Elementos.posicionarBotao(self.botaoD)
 
 
 

@@ -40,7 +40,7 @@ class FluxoDeJogoBotoes7():
         """
         Lê um botão
         :param botao: o número de pino do botão
-        :return:
+        :return: string
         """
         while True:
             # Fazendo um loop pelos botões. Uso o número do pino para ler e retorno a chave

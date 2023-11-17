@@ -16,11 +16,8 @@ from View.Computador.Inicio import Inicio
 class Computador:
     def __init__(self):
         # Variável que vai receber a escolha feita. Está variável vai ser usada pelo Fluxo de Jogo
-        self.escolha = ""
         # Iniciando o jogo
         self.jogo = FluxoDeJogoComp(self)
-
-        self.imagemFundo = ""
         # Criando a janela
         self.app = tk.Tk()
         # Atribuindo título a janela
@@ -64,17 +61,17 @@ class Computador:
 
 
         # Agora tenho que posicionar os frames
-        Elementos.posicionarFrame(self.frameJogo, 0)
-        Elementos.posicionarFrame(self.frameOpcoes, 1)
-        Elementos.posicionarFrame(self.frameTempo, 2)
+        Elementos.posicionarFrame(self.frameJogo)
+        Elementos.posicionarFrame(self.frameOpcoes)
+        Elementos.posicionarFrame(self.frameTempo)
 
 
         # Agora vou criar as caixas de texto para a informação de tempo de jogo
         self.tituloTempo = Elementos.criarTitulo(self, self.frameTempo, "Tempo remanescente:")
         self.tempo = Elementos.criarTitulo(self,self.frameTempo,f"{self.jogo.jogo.tempoJogado}")
 
-        Elementos.posicionarTitulo(self.tituloTempo, 0)
-        Elementos.posicionarTitulo(self.tempo, 1)
+        Elementos.posicionarTitulo(self.tituloTempo)
+        Elementos.posicionarTitulo(self.tempo)
 
 
         # Quero simplesmente iniciar minhas janelas investigar, viajar, destinos, e info mas não mostrar ela ainda ou passar informação
@@ -110,11 +107,10 @@ class Computador:
             Atualiza a informação de tempo
             :return:
         """
-        # self.tempo.grid_forget()
         Elementos.apagarElementoDaTela([self.tempo])
 
         self.tempo = Elementos.criarTitulo(self, self.frameTempo,f"{info} {self.jogo.jogo.tempoJogado}")
-        Elementos.posicionarTitulo(self.tempo, 1)
+        Elementos.posicionarTitulo(self.tempo)
 
     def jogar(self):
         self.limparTudo()

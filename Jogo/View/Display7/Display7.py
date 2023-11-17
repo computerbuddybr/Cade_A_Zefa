@@ -24,8 +24,6 @@ class Display7:
         """
         # Iniciando o jogo
         self.jogo = FluxoDeJogoBotoes7(self)
-
-        self.imagemFundo = ""
         # Criando a janela
         self.app = tk.Tk()
         # Atribuindo título a janela

@@ -17,8 +17,8 @@ class Menu():
         self.titulo = Elementos.criarTitulo(self.janela, self.janela.frameJogo, titulo)
         self.info = Elementos.criarTexto(self.janela, self.janela.frameJogo, texto)
 
-        Elementos.posicionarTitulo(self.titulo, 0)
-        Elementos.posicionarTexto(self.info,1)
+        Elementos.posicionarTitulo(self.titulo)
+        Elementos.posicionarTexto(self.info)
 
 
 
@@ -34,14 +34,6 @@ class Menu():
         """
         if self.on == True:
             Elementos.apagarElementoDaTela([self.titulo, self.info, self.botao1, self.botao2, self.botao3, self.botaoS, self.botaoD])
-            # self.titulo.grid_forget()
-            # self.info.grid_forget()
-            # self.botao1.grid_forget()
-            # self.botao2.grid_forget()
-            # self.botao3.grid_forget()
-            # self.botaoV.grid_forget()
-            # self.botaoS.grid_forget()
-            # self.botaoD.grid_forget()
             self.on = False
 
 
@@ -63,21 +55,15 @@ class Menu():
 
         self.botao3 = Elementos.criarBotao(self.janela, "Destinos", self.janela.jogo.destinos, Estilos.AZUL, Estilos.BRANCO)
 
-        # self.botaoV = Elementos.criarBotao(self.janela, "Voltar", self.janela.jogo.voltar, Estilos.AZUL, Estilos.BRANCO)
-
         self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo", self.janela.jogo.novoJogo, Estilos.PRETO, Estilos.BRANCO)
 
         self.botaoD = Elementos.criarBotao(self.janela, "Desligar", self.janela.app.destroy, Estilos.VERMELHO, Estilos.BRANCO)
 
         # Posicionando os botões
-
-
-
-        Elementos.posicionarBotao(self.botao1, 0)
-        Elementos.posicionarBotao(self.botao2, 1)
-        Elementos.posicionarBotao(self.botao3, 2)
-        # Elementos.posicionarBotao(self.botaoV, 3)
-        Elementos.posicionarBotao(self.botaoS, 4)
-        Elementos.posicionarBotao(self.botaoD, 5)
+        Elementos.posicionarBotao(self.botao1)
+        Elementos.posicionarBotao(self.botao2)
+        Elementos.posicionarBotao(self.botao3)
+        Elementos.posicionarBotao(self.botaoS)
+        Elementos.posicionarBotao(self.botaoD)
 
 

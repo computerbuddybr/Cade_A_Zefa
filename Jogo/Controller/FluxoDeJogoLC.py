@@ -1,15 +1,17 @@
 from Model.Jogo import Jogo
+
+
 class FluxoDeJogoLC:
     """
     Classe que controla o fluxo do jogo
     """
 
-    def __init__(self, view):
+    def __init__(self, janela):
         """
         Inicia o jogo e fica rodando, com novos jogos, enquanto não desligar
         """
         # Recebe o objeto view com funções que vão  servir para mostrar minhas informações. Neste caso, todos os meus objetos view vão implementar estas funções
-        self.view = view
+        self.janela = janela
 
 
 
@@ -47,7 +49,7 @@ class FluxoDeJogoLC:
                 return
 
             # Imprime o menu
-            self.view.mostraMenu()
+            self.janela.mostraMenu()
             self.escolha()
             # Testa a opcão escolhida para escolher a ação a ser tomada
             if self.opcao == "1":
@@ -76,7 +78,7 @@ class FluxoDeJogoLC:
             self.opcao = input()
             valido = self.opcao in possibilidades
             if valido == False:
-                self.view.escolhaIvalida()
+                self.janela.escolhaIvalida()
     def iniciarJogo(self):
          # Apaga a variável jogo anterior dando o valor None, ou Nulo para
          #self.jogo = 0
@@ -84,16 +86,10 @@ class FluxoDeJogoLC:
          # Inicia as variáveis de controle
          self.reiniciarControle()
          # Imprime a informação de um jogo novo
-         self.view.mostraNovoJogo(self.jogo.cidadeInicial.caso, self.jogo.cidadeInicial.tarefaCaso, self.jogo.tempoJogado)
-         self.view.mostraInfo(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
+         self.janela.mostraNovoJogo(self.jogo.cidadeInicial.caso, self.jogo.cidadeInicial.tarefaCaso, self.jogo.tempoJogado)
+         self.janela.mostraInfo(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
 
 
-    # def imprimirTitulo(self, texto):
-    #     print("\n/**********************/")
-    #     print(texto)
-    #     print("/**********************/\n")
-    # def imprimirTexto(self, texto):
-    #     print(texto)
 
     def reiniciarControle(self):
         """
@@ -117,7 +113,7 @@ class FluxoDeJogoLC:
         for local in locais:
             opcoes.append(local.local)
 
-        self.view.mostraOpcoes("Escolha o local que deseja investigar digitando a opção de destino ou v para voltar.", opcoes)
+        self.janela.mostraOpcoes("Escolha o local que deseja investigar digitando a opção de destino ou v para voltar.", opcoes)
         self.escolha()
         if self.checandoStatusJogo():
             return
@@ -126,7 +122,7 @@ class FluxoDeJogoLC:
         if self.translado(1, locais[int(self.opcao) - 1].local):
             return
 
-        self.view.mostraInfo(f"{locais[int(self.opcao) - 1].local}", f"{locais[int(self.opcao) - 1].pista}")
+        self.janela.mostraInfo(f"{locais[int(self.opcao) - 1].local}", f"{locais[int(self.opcao) - 1].pista}")
         # Checa se ganhou o jogo e toma as ações necessárias
         self.checarSeGanhou(locais[int(self.opcao)])
 
@@ -142,7 +138,7 @@ class FluxoDeJogoLC:
         opcoes = []
         for destino in destinos:
             opcoes.append(destino.cidade)
-        self.view.mostraOpcoes("Estes são os destinos para os quais você pode viajar:", opcoes)
+        self.janela.mostraOpcoes("Estes são os destinos para os quais você pode viajar:", opcoes)
         # self.imprimirTitulo("Estes são os destinos para os quais você pode viajar:")
         # for destino in destinos:
         #     self.imprimirTexto(destino.cidade)
@@ -157,7 +153,7 @@ class FluxoDeJogoLC:
         opcoes = []
         for destino in destinos:
             opcoes.append(destino.cidade)
-        self.view.mostraOpcoes("Para onde você quer viajar?\nSe precisar, digite v para voltar.", opcoes)
+        self.janela.mostraOpcoes("Para onde você quer viajar?\nSe precisar, digite v para voltar.", opcoes)
         self.escolha()
         if self.checandoStatusJogo():
             return
@@ -169,7 +165,7 @@ class FluxoDeJogoLC:
         if self.translado(tempoVoo, destinos[int(self.opcao) - 1].cidade):
             return
         self.jogo.cidadeAtual = destinos[int(self.opcao) - 1]
-        self.view.mostraInfo(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
+        self.janela.mostraInfo(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
 
     def translado(self, tempo, destino):
         """
@@ -179,9 +175,9 @@ class FluxoDeJogoLC:
         :return: Boolean: True caso tenha ultrapassado o tempo de jogo | False caso ainda tenha tempo de jogo
         """
         # TODO: Adicionar conta com coordenadas geograficas
-        self.view.mostraInfoTranslado(tempo, destino)
+        self.janela.mostraInfoTranslado(tempo, destino)
         self.jogo.tempoJogado -= tempo
-        self.view.mostraTempoRestante(tempo, self.jogo.tempoJogado)
+        self.janela.mostraTempoRestante(tempo, self.jogo.tempoJogado)
         if self.checarSeTempoDeJogoAcabou():
             return True
         if self.devoDormir():
@@ -196,7 +192,7 @@ class FluxoDeJogoLC:
         """
         if local.zefaEstaAqui:
             self.sair = True
-            self.view.mostraGanhou(self.jogo.cidadeInicial.vitoriaCaso, self.jogo.tempoJogado)
+            self.janela.mostraGanhou(self.jogo.cidadeInicial.vitoriaCaso, self.jogo.tempoJogado)
             # self.imprimirTitulo(self.jogo.cidades[0].vitoriaCaso)
             # self.imprimirTitulo(f"YAY! Você venceu o jogo! Sua pontuação foi de {self.jogo.tempoJogado}!")
             return True
@@ -207,7 +203,7 @@ class FluxoDeJogoLC:
         :return: Booleno True se acabou o tempo | False se ainda tem tempo
         """
         if self.jogo.tempoJogado <= 0:
-            self.view.mostraPerdeu()
+            self.janela.mostraPerdeu()
             # self.imprimirTitulo("Que pena. Acabou o tempo que você tinha para achar a Zefa! Mas não desista! Na próxima você acha ela!")
             self.sair = True
             return True
@@ -223,12 +219,12 @@ class FluxoDeJogoLC:
             # self.imprimirTitulo("Está na hora de dormir. Bons sonhos!")
             # for x in range(5):
             #     self.imprimirTexto("ZZZZZ...")
-            self.view.mostraDormir(self.jogo.tempoJogado)
+            self.janela.mostraDormir(self.jogo.tempoJogado)
             # self.imprimirTexto(f"Bom dia. Você só tem {self.jogo.tempoJogado} horas para achar a Zefa. Vamos ver se ainda dá tempo?")
             self.jogo.tempoJogado -= 8
             if self.checarSeTempoDeJogoAcabou():
                 return True
-            self.view.temTempo(self.jogo.tempoJogado)
+            self.janela.temTempo(self.jogo.tempoJogado)
             # self.imprimirTexto(f"Ufa, você ainda tem {self.jogo.tempoJogado} horas. Corre lá.")
             return False
 

@@ -10,20 +10,26 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 2](https://www.youtube.com/watch?v=nJkVHusJp6E&list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 3](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
-- Básico de SQL - [Curso Gratuito de MySQL Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=Ofktsne-utM&list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r) - Ah, mas este não é de SQLite. Não se preocupe. Os comandos e ideias são os mesmos. Apenas a sintaxe é um pouco diferente. Mas você vai conseguir acompanhar tranquilamente. o SQLite é mais simples que o MySQL, permite menos coisas, mas eu vou falar disso quando falar da base de dados.
+    - **Requisitos mínimos:** variáveis, funções, tipos de dado, coleções, estrutras condicionais, classes e objetos
 
-- Básico de configuração de Raspberry Pi - [Curso Gratuito de Raspberry Pi Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=CbIeFxsfgzk&list=PLHz_AreHm4dnGZ_nudmN4rvyLk2fHFRzy&index=2)
+- Básico de SQL 
+    - [Curso Gratuito de MySQL Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=Ofktsne-utM&list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r) - Ah, mas este não é de SQLite. Não se preocupe. Os comandos e ideias são os mesmos. Apenas a sintaxe é um pouco diferente. Mas você vai conseguir acompanhar tranquilamente. o SQLite é mais simples que o MySQL, permite menos coisas, mas eu vou falar disso quando falar da base de dados.
+    - **Requisitos mínimos:** SELECT, JOIN, WHERE
 
-- Primeiros Passos Raspberry Pi - [Curso Gratuito de Raspberry Pi do Brincando com ideias](https://www.youtube.com/watch?v=VcZ-vBWqFbg&list=PL7CjOZ3q8fMc7J7aoYrvza52URffS6WRq&index=9)
+- Básico de configuração de Raspberry Pi: 
+    - [Curso Gratuito de Raspberry Pi Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=CbIeFxsfgzk&list=PLHz_AreHm4dnGZ_nudmN4rvyLk2fHFRzy&index=2)   
 
-- Boa explicação de PULL-UP e PULL-DOWN - [Como Ligar Botões No Raspberry Pi Resistores Pull Up Down](https://www.youtube.com/watch?v=dQ8iT-skWxQ)
+    - [Curso Gratuito de Raspberry Pi do Brincando com ideias](https://www.youtube.com/watch?v=VcZ-vBWqFbg&list=PL7CjOZ3q8fMc7J7aoYrvza52URffS6WRq&index=9) - este curso está mais antigo mas o que achei melhor do que o outro curso foi a explicação do GPIO. Os vídeos 8 e 10. Então recomendo assistir ao curso do Gustavo Guanabara para configuração do Raspberry Pi e depois assistir os vídeos 8 e 10 deste curso para entender o GPIO.
+     - **Requisitos mínimos:** Instalação e configuração do Raspberry Pi OS, instalação de bibliotecas Python, configuração de GPIO
+
+    - Boa explicação de PULL-UP e PULL-DOWN - [Como Ligar Botões No Raspberry Pi Resistores Pull Up Down](https://www.youtube.com/watch?v=dQ8iT-skWxQ)
 
 # Recursos
 
 - [Playlist com dicas relevantes]()
 - [Playlist com tutoriais]()
 - [Site com os pinos do Raspberry Pi](https://pinout.xyz/)
-- Pinagem: ![Pinos do Raspberry Pi](imagens/pinos-raspberrypi4.png)
+- Pinagem: ![Pinos do Raspberry Pi](imagens/pinos-raspberrypi4.jpg)
 
 - [Documentação Raspberry Pi](https://www.raspberrypi.org/documentation/)
 
@@ -32,6 +38,8 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Documentação Biblioteca Python Rpi.GPIO](https://pypi.org/project/RPi.GPIO/)
 
 - [Documentação da biblioteca Tkinter](https://docs.python.org/3/library/tkinter.html)
+
+- [Documentação da biblioteca sqlite3](https://docs.python.org/3/library/sqlite3.html)
 
 - [Documentação PyInstaller](https://pyinstaller.org/en/stable/)
 
@@ -78,14 +86,8 @@ Nós vamos usar algumas bibliotecas do Python que não vem pré-instaladas. Não
 
 >Aqui temos uma ressalva importante. Use o comando pip e não pip3. O pip3 roda mas ele instala as bibliotecas em um ambiente virtual que ele cria e não onde o Raspberry Pi OS procura. 
 
-Nós iremos usar o SQLite para  a nossa base de dados. Para isso vamos precisar de da Biblioteca PyMySQL. Para instalar ela, abra o terminal do Raspberry Pi e digite:
+Nós iremos usar o haversine para calcular as distâncias. Para isso, abra o terminal do Raspberry Pi ou do seu computador e digite:
 
-```bash
-
-sudo pip install pymysql[rsa]
-
-```	
-Também faremos uns cálculos de distância e para isso vamos usar:
 ```bash
 sudo pip install haversine
 ``` 
@@ -103,7 +105,18 @@ Pronto. Temos todo o ambiente de desenvolvimento que vamos precisar.
 
 # Diagrama de Classes
 
-# Fluxograma da classe Jogo e criação do caso
+![Diagrama da Base de Classes](imagens/diagramas/diagrama-classes.png)
+
+# Diagrama de atividades da classe Jogo na criação do caso
+
+![Diagrama da Base de Dados](imagens/diagramas/diagrama-atividades-classe-jogo.png)
+
+# Diagrama de atividades do fluxo de jogo
+
+![Diagrama da Base de Dados](imagens/diagramas/diagrama-fluxo-jogo.png)
+
+# Roteiro de destinos
+![Diagrama da Base de Dados](imagens/diagramas/roteiro-cidades.png)
 
 # Imagens do projeto funcionando
 

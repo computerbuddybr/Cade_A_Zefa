@@ -24,11 +24,6 @@ class InfoComEscolha:
         # Variável de controle
         self.on = False
 
-        # self.mostrarInstrucoes(self.titulo, self.texto)
-        # self.criandoBotoes()
-        #
-        # self.limparTudo()
-
 
 
     def atualizarInfo(self, opcoes):
@@ -48,8 +43,8 @@ class InfoComEscolha:
         # Para apagar o texto que tinha antes
         self.titulo = Elementos.criarTitulo(self.janela, self.janela.frameJogo, titulo)
         self.info = Elementos.criarTexto(self.janela, self.janela.frameJogo, texto)
-        Elementos.posicionarTitulo(self.titulo, 0)
-        Elementos.posicionarTexto(self.info, 1)
+        Elementos.posicionarTitulo(self.titulo)
+        Elementos.posicionarTexto(self.info)
 
 
 
@@ -67,15 +62,7 @@ class InfoComEscolha:
             Elementos.apagarElementoDaTela([self.titulo, self.info, self.botao1, self.botao2, self.botao3, self.botaoV, self.botaoS, self.botaoD])
             self.on = False
 
-    def mensagemRapida(self, titulo, texto):
-        """
-        Trocar a mensagem durante deslocamentos e dormir
-        :param titulo:
-        :param texto:
-        :return:
-        """
-        self.titulo.configure(text=titulo)
-        self.info.configure(text=texto)
+
 
     def trocarInfo(self, titulo, texto):
         self.limparInfo()
@@ -96,7 +83,7 @@ class InfoComEscolha:
 
         else:
 
-            #
+
             self.localDestino = self.janela.jogo.jogo.cidadeAtual.cidadesDeDestino[opcao].cidade
             self.tempoViagem = self.janela.jogo.jogo.cidadeAtual.calcularTempoDeVoo(self.janela.jogo.jogo.cidadeAtual.cidadesDeDestino[opcao])
 
@@ -146,15 +133,12 @@ class InfoComEscolha:
         self.botaoD = Elementos.criarBotao(self.janela, "Desligar", self.janela.app.destroy, Estilos.VERMELHO, Estilos.BRANCO)
 
         # Posicionando os botões
-
-
-
-        Elementos.posicionarBotao(self.botao1, 0)
-        Elementos.posicionarBotao(self.botao2, 1)
-        Elementos.posicionarBotao(self.botao3, 2)
-        Elementos.posicionarBotao(self.botaoV, 3)
-        Elementos.posicionarBotao(self.botaoS, 4)
-        Elementos.posicionarBotao(self.botaoD, 5)
+        Elementos.posicionarBotao(self.botao1)
+        Elementos.posicionarBotao(self.botao2)
+        Elementos.posicionarBotao(self.botao3)
+        Elementos.posicionarBotao(self.botaoV)
+        Elementos.posicionarBotao(self.botaoS)
+        Elementos.posicionarBotao(self.botaoD)
 
 
 

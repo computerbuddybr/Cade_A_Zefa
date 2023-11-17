@@ -12,7 +12,7 @@ class Jogo:
     roteiroZefa = [4,5,1,2,3,False, False, False, False]
     def __init__(self):
         self.conexaoBD = ConexaoBD()
-        self.tempoDeJogo = 152
+        # self.tempoDeJogo = 152
         self.acordouEm = 152
         self.tempoJogado = 152
         self.criarJogo()

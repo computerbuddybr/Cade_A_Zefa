@@ -142,8 +142,8 @@ class Cidade:
         for newLocal in self.locais:
             print(f"A pista para o local: {newLocal.local} da cidade {self.cidade} é: {newLocal.pista}")
 
-    def visitarLocal(self, indice):
-        self.localAtual = self.locais[indice]
+    # def visitarLocal(self, indice):
+    #     self.localAtual = self.locais[indice]
 
     def criarPistasCidadeFinal(self):
         """

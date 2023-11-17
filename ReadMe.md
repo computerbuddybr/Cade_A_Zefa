@@ -4,11 +4,12 @@
 ### Informações
 - **Autora:** Adriana Laura Cerdeira
 - **Projeto Final de Conclusão de Curso em Enegenharia de Computação - Universidade Anhembi Morumbi**
-- **Outros integrantes do grupo:** André Almeida, Gabriel Campos, Janderson Braz, Thiago Henrique Cruz
+- **Outros integrantes do grupo:** Andre de Almeida Alves Batista, Gabriel Campos de Paula, Janderson Barbosa Braz, Thiago Henrique da Cruz
+
 
 ### Bem vindos, bem vindas ao nosso Projeto de Conclusão de Curso em Engenharia de Computação!
 
-Este projeto foi desenvolvido como o nosso TCC e tem como premissa a disponibilização de um tutorial com código fonte aberto para que qualquer pessoa possa desenvolver um jogo de detetive digital com Raspberry Pi. O nosso público alvo principal eram professores de escolas de ension fundamental e médio que queiram ensinar programação e eletrônica de uma forma divertida e interativa, mas qualquer um que tenha interesse em praticar programação em Python e o GPIO de Raspberry Pi com entradas de botões vai encontrar um material interessante e gratuito aqui.
+Este projeto foi desenvolvido como o nosso TCC e tem como premissa a disponibilização de um tutorial com código fonte aberto para que qualquer pessoa possa desenvolver um jogo de detetive digital com Raspberry Pi. O nosso público alvo principal são professores de escolas de ensino fundamental e médio que queiram ensinar programação e eletrônica de uma forma divertida e interativa, mas qualquer um que tenha interesse em praticar programação em Python e o GPIO de Raspberry Pi com entradas de botões vai encontrar um material interessante e gratuito aqui.
 
 Este projeto não tem fins lucrativos, é feito com a intenção de fornecer um material de ensino modular para professores que queiram utilizá-lo. Ele é muito adaptável, o professor pode escolher adotá-lo na integra ou em partes. E o jogo escolhido também é educacional, para que depois possa ser usado para jogar e aprender.
 
@@ -32,10 +33,12 @@ Este jogo será criado em 3 versões diferentes. Uma para se jogar na Linha de C
 
 Você educador pode escolher qualquer um destes projetos, ou todos. Ou pode até escolher que seus alunos simplesmente joguem o jogo. Nos tutoriais vou mostrar como alterar a base de dados para poder colocar informação relevante aos seus estudos.
 
-Há já uma base de dados prontas com 35 cidades, seus casos e pistas. Porém esta base foi criada por alunos de Engenharia de Computação, não História ou Geografia, com informações tiradas da Wikipedia. Então, por favor levar isto em consideração ao usá-la.
+Há já uma base de dados pronta com 35 cidades, seus casos e pistas. Porém esta base foi criada por alunos de Engenharia de Computação, não História ou Geografia, com informações tiradas da Wikipedia. Então, por favor levar isto em consideração ao usá-la.
 
 Bons estudos!
 
 ### A licença
 
-O código e tutoriais está sendo fornecido de forma gratuita para ser usado baixo as regras da licença GNU GPL (Licença Geral Pública). Você pode usar e distribuir este material a vontade. Você não pode vendê-lo ou usá-lo para fins lucrativos. Não foi criado para fins lucrativos, mas para fins educacionais.
+O código e tutoriais está sendo fornecido de forma gratuita para ser usado baixo as regras da licença GNU GPL (Licença Geral Pública). Você pode usar e distribuir este material à vontade. Você não pode vendê-lo ou usá-lo para fins lucrativos. Não foi criado para fins lucrativos, mas para fins educacionais.
+
+Você e qualquer pessoa à qual você venha a entregar este material isentam os autores deste projeto de responsabilidade sobre o uso deste jogo e tutorial, sendo você o único responsável por qualquer uso que você faça do material contido aqui neste repositório e nos links associados, e qualquer consequência deste uso.

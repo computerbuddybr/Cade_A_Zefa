@@ -38,7 +38,7 @@ class Elementos:
         return tk.Button(janela.frameOpcoes, text=texto, foreground=corTexto, background=corBotao, command=lambda: funcao(), padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal)
 
     @staticmethod
-    def posicionarBotao(botao,pos):
+    def posicionarBotao(botao):
         """
         Posicionar o botão
         :param botao: o botão criado
@@ -59,7 +59,7 @@ class Elementos:
         """
         return tk.Label(frame, text=titulo, font=janela.titulo,bg=Estilos.FRAME, foreground=Estilos.BRANCO, wraplength=janela.wrap, anchor="center")
     @staticmethod
-    def posicionarTitulo(titulo, pos):
+    def posicionarTitulo(titulo):
         """
         Posicionar título
         :param titulo: o título criado
@@ -67,7 +67,6 @@ class Elementos:
         :return:
         """
         titulo.pack(fill=tk.BOTH, expand=1, padx=Estilos.PADX, pady=Estilos.PADY)
-        # titulo.grid(row=pos, column=0, padx=Estilos.PADX, pady=Estilos.PADY, sticky=tk.W+tk.E)
 
     @staticmethod
     def criarTexto(janela, frame, texto):
@@ -81,7 +80,7 @@ class Elementos:
         return tk.Label(frame, text=texto, font=janela.textoNormal, bg=Estilos.FRAME, foreground=Estilos.BRANCO, wraplength=janela.wrap, anchor="center")
 
     @staticmethod
-    def posicionarTexto(texto, pos):
+    def posicionarTexto(texto):
         """
         Posiciona o texto
         :param texto: elemento de texto
@@ -89,7 +88,6 @@ class Elementos:
         :return:
         """
         texto.pack(fill=tk.BOTH, expand=1, padx=Estilos.PADX, pady=Estilos.PADY)
-        # texto.grid(row=pos, column=0, padx=Estilos.PADX, pady=Estilos.PADY, sticky=tk.W+tk.E)
     @staticmethod
     def criarFrame(janela):
         """
@@ -99,7 +97,7 @@ class Elementos:
         """
         return tk.Frame(janela.app, width=janela.larguraJanela, height=(janela.janelaLinha * 8), bg=Estilos.FRAME, borderwidth=Estilos.BORDA, relief=Estilos.RELEVO, takefocus=True)
     @staticmethod
-    def posicionarFrame(frame, pos):
+    def posicionarFrame(frame):
         """
         Posiciona o frame
         :param frame: elemento de frame

@@ -62,11 +62,12 @@ class InfoComEscolha:
         self.limparInfo()
         self.mostrarInstrucoes(titulo, texto)
 
-    def deslocar(self, opcao):
+    def deslocar(self, op):
+        # Como eu recebo um string iniciando em um, preciso transformar em um int e subtrair 1 para ter a posição de índice correto
+        opcao = int(op) - 1
 
 
         if self.tipo == "investigar":
-            self.localDestino = self.janela.jogo.jogo.cidadeAtual.locais[opcao].local
             self.tempoViagem = 1
             self.localDestino = self.janela.jogo.jogo.cidadeAtual.locais[opcao].local
             if self.testarTempo() == False:
@@ -103,7 +104,6 @@ class InfoComEscolha:
         dormiu = self.janela.jogo.dormir()
         if dormiu > 0:
             print("Entrou em tem que dormir")
-            self.trocarInfo("Tá na hora de dormir!", "ZZZZZ")
             if dormiu == 1:
                 self.janela.jogo.acabouJogo()
                 return False

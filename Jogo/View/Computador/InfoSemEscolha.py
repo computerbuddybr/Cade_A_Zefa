@@ -48,10 +48,10 @@ class InfoSemEscolha:
         self.info2 = Elementos.criarTexto(self.janela, self.janela.frameJogo, self.info[1])
         self.info3 = Elementos.criarTexto(self.janela, self.janela.frameJogo, self.info[2])
 
-        Elementos.posicionarTitulo(self.titulo,0)
-        Elementos.posicionarTexto(self.info1, 1)
-        Elementos.posicionarTexto(self.info2, 2)
-        Elementos.posicionarTexto(self.info3, 3)
+        Elementos.posicionarTitulo(self.titulo)
+        Elementos.posicionarTexto(self.info1)
+        Elementos.posicionarTexto(self.info2)
+        Elementos.posicionarTexto(self.info3)
 
 
 
@@ -64,13 +64,6 @@ class InfoSemEscolha:
         """
         if self.on == True:
             Elementos.apagarElementoDaTela([self.titulo, self.info1, self.info2, self.info3, self.botaoV, self.botaoS, self.botaoD])
-            # self.titulo.grid_forget()
-            # self.info1.grid_forget()
-            # self.info2.grid_forget()
-            # self.info3.grid_forget()
-            # self.botaoV.grid_forget()
-            # self.botaoS.grid_forget()
-            # self.botaoD.grid_forget()
             self.on = False
 
 
@@ -83,7 +76,6 @@ class InfoSemEscolha:
         """
         self.on = True
         self.atualizarInfo(titulo, info)
-        # self.limparTudo()
         self.mostrarInstrucoes()
         self.criandoBotoes()
 
@@ -105,9 +97,9 @@ class InfoSemEscolha:
         # Posicionando os botões
 
 
-        Elementos.posicionarBotao(self.botaoV, 0)
-        Elementos.posicionarBotao(self.botaoS, 1)
-        Elementos.posicionarBotao(self.botaoD, 2)
+        Elementos.posicionarBotao(self.botaoV)
+        Elementos.posicionarBotao(self.botaoS)
+        Elementos.posicionarBotao(self.botaoD)
 
 
 
