@@ -42,6 +42,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Documentação da biblioteca sqlite3](https://docs.python.org/3/library/sqlite3.html)
 
 - [Documentação PyInstaller](https://pyinstaller.org/en/stable/)
+- [Download DBeaver](https://dbeaver.io/download/)
 
 # Hardware usado nos projetos
 

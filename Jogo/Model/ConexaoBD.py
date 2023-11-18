@@ -36,16 +36,9 @@ class ConexaoBD:
     Com os atributos cursor faremos a busca (query) na base de dados
     """
     def lerDados(self, sql):
-        # if(self.conectado):
-        #     with self.conexao.cursor() as cursor:
-        #         cursor.execute(sql)
-        #         self.registros = cursor.fetchall()
-        #         print("Os dados da base são: ")
-        #         print(self.registros)
-        #         return self.registros
-        # else:
-        #     print(f"A conexão não existe: {self.erro}")
-        #     return False
+        """
+        Usada para ler dados quando o sql não usar variáveis
+        """
         try:
             self.cursor.execute(sql)
             self.registros = self.cursor.fetchall()
@@ -63,7 +56,8 @@ class ConexaoBD:
         Com os atributos cursor faremos a busca (query) na base de dados
 
         :param: sqlParametrizado: sql já com os placeholders para os paramêtros. Ex: "select * from tabela where id = :id"
-        :param: parametros: tupla com os parâmetros. Caso haja só um parâmetro, colocar entre parênteses e uma vírgula após o elemento para o Python entender que é uma tupla
+        :param: parametros: dict com os parâmetros, sendo as chaves os nomes dos paramêtros. Exemplo: {"id": 2}
+        Mais informação: https://docs.python.org/3/library/sqlite3.html#sqlite3-placeholders
         :return: resultados ou erro
         """
         if(self.conectado):

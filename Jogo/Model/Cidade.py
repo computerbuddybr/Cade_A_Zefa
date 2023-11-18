@@ -4,13 +4,23 @@ import haversine as hs
 from Model.Local import Local
 class Cidade:
     def __init__(self, conexaoBD, id, destino):
+        """
+        Inicia a classe cidade
+        param: conexãoBD: o objeto de conexão à base de dados
+        param: id: o id da Cidade buscada
+        param: destino: o id da cidade de destino
+        """
         self.destino = destino
         self.conexaoBD = conexaoBD
 
         self.locais = []
         self.localAtual = ""
-        sql = f"select * from cidades as c INNER JOIN paises as p ON (c.fk_id_pais = p.pk_id_pais) where c.pk_id_cidade =  {id}"
-        resultado = self.conexaoBD.lerDados(sql)
+
+        sql = f"select * from cidades as c INNER JOIN paises as p ON (c.fk_id_pais = p.pk_id_pais) where c.pk_id_cidade =  :id"
+        parametros = {"id": id}
+        resultado = self.conexaoBD.lerDadosParam(sql, parametros)
+
+
         if len(resultado) >= 1:
             self.id = resultado[0][0]
             self.cidade = resultado[0][2]
@@ -22,8 +32,10 @@ class Cidade:
                 # self.imagem_bandeira == False
                 print("Imagem bandeira não era None")
             self.moeda = resultado[0][10]
-            sql = f"select * from curiosidades_cidades where fk_id_cidade = {self.id}"
-            curiosidades = conexaoBD.lerDados(sql)
+
+            sql = f"select * from curiosidades_cidades where fk_id_cidade = :id"
+            parametros = {"id": self.id}
+            curiosidades = conexaoBD.lerDadosParam(sql, parametros)
             # print(curiosidades)
             quantidadeDeCuriosidades = len(curiosidades)
 
@@ -42,6 +54,10 @@ class Cidade:
         Cria o caso para a cidade
         :return: informação de caso atribuida às propriedades da cidade
         """
+        sql = f"select * from casos where fk_id_cidade = :id"
+        parametros = {"id": self.id}
+        casos = self.conexaoBD.lerDadosParam(sql, parametros)
+
         sql = f"select * from casos where fk_id_cidade = {self.id}"
         casos = self.conexaoBD.lerDados(sql)
         # print(curiosidades)
@@ -64,8 +80,9 @@ class Cidade:
         :return: lista de pistas da cidade
         """
         self.pistasCidade = []
-        sql = f"select pista from pista_da_cidade where fk_id_cidade = {self.id}"
-        pistas = self.conexaoBD.lerDados(sql)
+        sql = f"select pista from pista_da_cidade where fk_id_cidade = :id"
+        parametros = {"id": self.id}
+        pistas = self.conexaoBD.lerDadosParam(sql,parametros)
         print("Pistas da base")
         print(pistas)
         for pista in pistas:
@@ -142,8 +159,6 @@ class Cidade:
         for newLocal in self.locais:
             print(f"A pista para o local: {newLocal.local} da cidade {self.cidade} é: {newLocal.pista}")
 
-    # def visitarLocal(self, indice):
-    #     self.localAtual = self.locais[indice]
 
     def criarPistasCidadeFinal(self):
         """
