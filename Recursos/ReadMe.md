@@ -10,7 +10,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 2](https://www.youtube.com/watch?v=nJkVHusJp6E&list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 3](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
-    - **Requisitos mínimos:** variáveis, funções, tipos de dado, coleções, estrutras condicionais, classes e objetos
+    - **Requisitos mínimos:** variáveis, funções, tipos de dados, coleções, estrutras condicionais, classes e objetos
 
 - Básico de SQL 
     - [Curso Gratuito de MySQL Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=Ofktsne-utM&list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r) - Ah, mas este não é de SQLite. Não se preocupe. Os comandos e ideias são os mesmos. Apenas a sintaxe é um pouco diferente. Mas você vai conseguir acompanhar tranquilamente. o SQLite é mais simples que o MySQL, permite menos coisas, mas eu vou falar disso quando falar da base de dados.
@@ -44,6 +44,8 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Documentação PyInstaller](https://pyinstaller.org/en/stable/)
 - [Download DBeaver](https://dbeaver.io/download/)
 
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+
 # Hardware usado nos projetos
 
 Os links foram colocados só para mostrar onde eu comprei, mas não é recomendação. Pesquise e compre onde e qual achar melhor.
@@ -52,7 +54,7 @@ Os links foram colocados só para mostrar onde eu comprei, mas não é recomenda
 - Raspberry Pi 4 8GB
 - SD Card 32GB
 - Fonte 5V 3A
-- 6 Botoões
+- 6 Botões
 - Protoboard
 - Jumpers
 - Cabo USB
@@ -60,9 +62,11 @@ Os links foram colocados só para mostrar onde eu comprei, mas não é recomenda
 
 # Conexão Botões
 
-- Esquemático: ![Pinos do Raspberry Pi](imagens/esquematico_botoes.png)
+- Esquemático: 
+![Pinos do Raspberry Pi](imagens/esquematico_botoes.png)
 
-- Protoboard: ![Pinos do Raspberry Pi](imagens/protoboard_botoes.png)
+- Protoboard: 
+![Pinos do Raspberry Pi](imagens/protoboard_botoes.png)
 
 
 
@@ -98,6 +102,18 @@ E vamos usar a biblioteca abaixo para criar o executável final:
 sudo pip install -U pyinstaller
 ```
 
+
+Além disso vamos precisar instalar os drivers do SQLite. No Raspberry Pi ou Linux em geral. Para isso, abra o terminal do Raspberry Pi e digite:
+
+```bash
+sudo apt install sqlite3
+```
+
+No Windows, você precisa:
+- Baixar o executável do SQLite no site oficial: https://www.sqlite.org/download.html
+- Extrair tudo. 
+- Renomear a pasta para SQLite3 e transferir para a raiz do disco C.
+- Adicionar o caminho da pasta as Variáveis de Ambientes Path.
 Pronto. Temos todo o ambiente de desenvolvimento que vamos precisar.
 
 # Diagrama da Base de Dados

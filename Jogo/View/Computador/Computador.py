@@ -114,7 +114,7 @@ class Computador:
 
     def jogar(self):
         self.limparTudo()
-        self.janelaMenu.reiniciar(f"Bem vindo a {self.jogo.jogo.cidadeAtual.cidade}", self.jogo.jogo.cidadeInicial.curiosidade)
+        self.janelaMenu.reiniciar(f"Boas vindas  a {self.jogo.jogo.cidadeAtual.cidade}", self.jogo.jogo.cidadeInicial.curiosidade)
 
 
 

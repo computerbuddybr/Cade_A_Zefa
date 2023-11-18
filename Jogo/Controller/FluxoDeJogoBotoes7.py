@@ -94,7 +94,7 @@ class FluxoDeJogoBotoes7():
         self.janela.limparTudo()
         self.opcao = ""
         self.iniciarJogo()
-        self.janela.janelaMenu.reiniciar(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeInicial.curiosidade)
+        self.janela.janelaMenu.reiniciar(f"Boas vindas a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeInicial.curiosidade)
         self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
 
 

@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS `locais` (
   `pk_id_local` INTEGER PRIMARY KEY AUTOINCREMENT,
   `local` VARCHAR,
   `bandeira` BOOLEAN,
+  `moeda` BOOLEAN,
   `pista_cidade` BOOLEAN
   `moeda` BOOLEAN);
 

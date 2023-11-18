@@ -87,7 +87,7 @@ class FluxoDeJogoLC:
          self.reiniciarControle()
          # Imprime a informação de um jogo novo
          self.janela.mostraNovoJogo(self.jogo.cidadeInicial.caso, self.jogo.cidadeInicial.tarefaCaso, self.jogo.tempoJogado)
-         self.janela.mostraInfo(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
+         self.janela.mostraInfo(f"Boas vindas  a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
 
 
 
@@ -165,7 +165,7 @@ class FluxoDeJogoLC:
         if self.translado(tempoVoo, destinos[int(self.opcao) - 1].cidade):
             return
         self.jogo.cidadeAtual = destinos[int(self.opcao) - 1]
-        self.janela.mostraInfo(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
+        self.janela.mostraInfo(f"Boas vindas  a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeAtual.curiosidade)
 
     def translado(self, tempo, destino):
         """
