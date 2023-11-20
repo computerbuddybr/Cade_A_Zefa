@@ -1,7 +1,7 @@
 import random
 class Local:
     """
-    @param tipoPista = 1 - pista real, 2 - pista local falso, 3 - pista local final
+    Classe que representa o local de pista
     """
     def __init__(self, conexaoBD, id, local, bandeira, pistaCidade, moeda):
         self.zefaEstaAqui = False
@@ -31,7 +31,7 @@ class Local:
                 indice = random.randint(0, quantidadeDePersonagens - 1)
                 # print("Pra saber o indice")
                 # print(personagens[indice])
-            self.personagem = personagens[indice][1]
+            self.personagem = personagens[indice]["personagem"]
         else:
             self.personagem = "Não há um personagem com esse id"
 
@@ -55,16 +55,24 @@ class Local:
         self.pista = f"Só sei que ela comprou {moeda}"
         print(f"A pista da moeda para {self.local} é: {self.pista}")
 
-    def criarPistaCidade(self, destino):
-        print("Chamou o criar Pista Cidade")
-        print(f"O id de destino no criar pista cidade é: {destino.cidade}")
+    def criarPistaCidade(self, pistas):
+        """
+        Sorteia uma pista da cidade e atribui ela como pista do local.
+        Além disso, remove essa pista do array de pistas para que não possa ser usada novamente e repetida.
+        :param pistas: array de pistas da cidade
+        """
+
         print("Pistas da cidade de destino")
-        print(destino.pistasCidade)
-        quantidadeDePistas = len(destino.pistasCidade)
-        if(quantidadeDePistas > 0):
-            indice = random.randint(0, quantidadeDePistas - 1)
-            print(f"Random int pista cidade: {indice}")
-            self.pista = destino.pistasCidade[indice]
+        print(pistas)
+        quantidadeDePistas = len(pistas)
+        if quantidadeDePistas > 0 :
+            if quantidadeDePistas > 1:
+                indice = random.randint(0, quantidadeDePistas - 1)
+                print(f"Random int pista cidade: {indice}")
+                self.pista = pistas[indice]
+                pistas.pop(indice)
+            else:
+                self.pista = pistas[0]
         else:
             self.pista = "Não há pistas para esta cidade"
 
@@ -75,17 +83,17 @@ class Local:
 
     def criarPistaFalsa(self):
         naoVi = ["Nunca vi alguém assim.", "Nunca vi essa pessoa.", "Não conheço não.", "Você tem certeza que ela esteve aqui?", "Acho que você se enganou, não passou ninguém assim por aqui.", "Quem?", "Tô sabendo de nada não.", "Acho que você está na pista errada."]
-        self.pista = f"{self.personagem}:  {naoVi[random.randint(0, len(naoVi) - 1)]}"
+        self.pista = naoVi[random.randint(0, len(naoVi) - 1)]
         print(f"A pista da falsa para {self.local} é: {self.pista}")
 
     def criarPistaCidadeFinal(self):
         cuidado = ["Se eu fosse você eu tomava cuidado.", "A Zefa já está sabendo que você está atrás dela e não está feliz.", "Tem uma recompensa pela sua cabeça.", "Você está cutucando vespeiro", "Não me envolve nisso, não quero rolo pro meu lado.", "Se eu fosse você fugia.", "Some daqui, não quero saber de problemas."]
-        self.pista = f"{cuidado[random.randint(0, len(cuidado) - 1)]}"
+        self.pista = cuidado[random.randint(0, len(cuidado) - 1)]
         print(f"A pista da cidade final para {self.local} é: {self.pista}")
 
     def criarPistaPrendeuAZefa(self):
         self.pista = "Parabéns! Você capturou a Zefa!"
         self.zefaEstaAqui = True
-        self.localFinal = True
+        # self.localFinal = True
         print(f"A pista de prendeu a Zefa para {self.local} é: {self.pista}")
 

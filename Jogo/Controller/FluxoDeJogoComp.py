@@ -1,5 +1,4 @@
 from Model.Jogo import Jogo
-from time import sleep
 class FluxoDeJogoComp:
     """
     Classe que controla o fluxo do jogo
@@ -42,7 +41,6 @@ class FluxoDeJogoComp:
             tempoDeVoo += f"\n{opcao.cidade}: {self.jogo.cidadeAtual.calcularTempoDeVoo(opcao)} horas de voo."
 
             opcoes.append(opcao.cidade)
-        # self.janela.janelaViajar.reiniciar("Para onde quer viajar? ", "Seu tempo de viagem será de 10 horas.", opcoes)
         self.janela.janelaViajar.reiniciar("Para onde quer viajar? ", tempoDeVoo, opcoes)
         print("Destinos")
     def destinos(self):
@@ -101,8 +99,6 @@ class FluxoDeJogoComp:
         """
         self.infoTempo += " e de dormir"
         if self.jogo.acordouEm - self.jogo.tempoJogado >= 16:
-            #TODO: Alterar mensagem para hora de dormir
-            print("Hora de dormir")
 
             self.jogo.tempoJogado -= 8
             self.jogo.acordouEm = self.jogo.tempoJogado

@@ -11,10 +11,7 @@ class ConexaoBD:
     erro = ""
     def __init__(self):
         self.conectado = self.conectar()
-        pass
-    """
-    Aqui abrimos a conexão com a base de dados e criamos o atributo cursor que será usado para executar as buscas (queries)
-    """
+
     def conectar(self):
         """
         Faz a conexão com a base de dados
@@ -22,6 +19,7 @@ class ConexaoBD:
         """
         try:
             self.conexao = sqlite3.connect('db/zefa.sqlite')
+            self.conexao.row_factory = sqlite3.Row
             self.cursor = self.conexao.cursor()
             print("A conexão com a base de dados foi um sucesso")
             return True
@@ -32,23 +30,27 @@ class ConexaoBD:
             return False
 
 
-    """
-    Com os atributos cursor faremos a busca (query) na base de dados
-    """
+
     def lerDados(self, sql):
         """
         Usada para ler dados quando o sql não usar variáveis
         """
-        try:
-            self.cursor.execute(sql)
-            self.registros = self.cursor.fetchall()
-            print("Os dados da base são: ")
-            print(self.registros)
-            return self.registros
-        except sqlite3.Error as erro:
-            self.erro = erro
-            print("Erro ao conectar ao sqlite", self.erro)
-            return self.erro
+        if(self.conectado):
+            try:
+                self.cursor.execute(sql)
+                self.registros = self.cursor.fetchall()
+                print("Os dados da base são: ")
+                for registro in self.registros:
+                    for chave in registro.keys():
+                        print(f"Coluna: {chave} | Valor: {registro[chave]}")
+                return self.registros
+            except sqlite3.Error as erro:
+                self.erro = erro
+                print("Erro ao conectar ao sqlite", self.erro)
+                return self.erro
+        else:
+            print(f"A conexão não existe: {self.erro}")
+            return False
 
 
     def lerDadosParam(self, sqlParametrizado, parametros):
@@ -65,7 +67,9 @@ class ConexaoBD:
                 self.cursor.execute(sqlParametrizado, parametros)
                 self.registros = self.cursor.fetchall()
                 print("Os dados da base são: ")
-                print(self.registros)
+                for registro in self.registros:
+                    for chave in registro.keys():
+                        print(f"Coluna: {chave} | Valor: {registro[chave]}")
                 return self.registros
             except sqlite3.Error as erro:
                 self.erro = erro

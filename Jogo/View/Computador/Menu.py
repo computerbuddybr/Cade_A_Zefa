@@ -1,5 +1,4 @@
 from View.Computador.Constantes import Estilos, Elementos
-import tkinter as tk
 class Menu():
     def __init__(self, janela):
         """
@@ -22,10 +21,6 @@ class Menu():
 
 
 
-    def limparInfo(self):
-        Elementos.apagarElementoDaTela([self.titulo, self.info])
-        # self.titulo.grid_forget()
-        # self.info.grid_forget()
 
     def limparTudo(self):
         """
@@ -37,9 +32,6 @@ class Menu():
             self.on = False
 
 
-    def trocarInfo(self, titulo, texto):
-        self.limparInfo()
-        self.mostrarInstrucoes(titulo, texto)
 
     def reiniciar(self, titulo, texto):
         self.limparTudo()

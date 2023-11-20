@@ -25,8 +25,6 @@ class FluxoDeJogoLC:
 
         # Variável de controle para saber se devo desligar o programa
         self.desligar = False
-        # Variável que recebera as opções escolhidas
-        self.opcao = ""
         # Variáveis de controle do jogo
         self.reiniciarControle()
         # Loop que mantem o programa rodando até o usuário escolher desligar
@@ -96,8 +94,11 @@ class FluxoDeJogoLC:
         Reinicia as variáveis de controle depois de um loop de jogo
         :return:
         """
+        # Propriedade de controle
         self.sair = False
+        # Propriedade de controle
         self.voltar = False
+        # Propriedade que vai receber aopção selecionada
         self.opcao = 0
 
     def investigar(self, locais):
@@ -113,7 +114,7 @@ class FluxoDeJogoLC:
         for local in locais:
             opcoes.append(local.local)
 
-        self.janela.mostraOpcoes("Escolha o local que deseja investigar digitando a opção de destino ou v para voltar.", opcoes)
+        self.janela.mostraOpcoes("Escolha o local que deseja investigar digitando a opção de destino ou v para voltar ou d para desligar.", opcoes)
         self.escolha()
         if self.checandoStatusJogo():
             return
@@ -122,9 +123,9 @@ class FluxoDeJogoLC:
         if self.translado(1, locais[int(self.opcao) - 1].local):
             return
 
-        self.janela.mostraInfo(f"{locais[int(self.opcao) - 1].local}", f"{locais[int(self.opcao) - 1].pista}")
+        self.janela.mostraInfo(locais[int(self.opcao) - 1].local, locais[int(self.opcao) - 1].pista)
         # Checa se ganhou o jogo e toma as ações necessárias
-        self.checarSeGanhou(locais[int(self.opcao)])
+        self.checarSeGanhou(locais[int(self.opcao) - 1])
 
 
     def destinos(self, destinos):
@@ -139,9 +140,7 @@ class FluxoDeJogoLC:
         for destino in destinos:
             opcoes.append(destino.cidade)
         self.janela.mostraOpcoes("Estes são os destinos para os quais você pode viajar:", opcoes)
-        # self.imprimirTitulo("Estes são os destinos para os quais você pode viajar:")
-        # for destino in destinos:
-        #     self.imprimirTexto(destino.cidade)
+
     def viajar(self, destinos):
         """
         Mostra os destinos para onde poderia viajar
@@ -174,7 +173,6 @@ class FluxoDeJogoLC:
         :param destino: para onde está se deslocando
         :return: Boolean: True caso tenha ultrapassado o tempo de jogo | False caso ainda tenha tempo de jogo
         """
-        # TODO: Adicionar conta com coordenadas geograficas
         self.janela.mostraInfoTranslado(tempo, destino)
         self.jogo.tempoJogado -= tempo
         self.janela.mostraTempoRestante(tempo, self.jogo.tempoJogado)
@@ -193,8 +191,6 @@ class FluxoDeJogoLC:
         if local.zefaEstaAqui:
             self.sair = True
             self.janela.mostraGanhou(self.jogo.cidadeInicial.vitoriaCaso, self.jogo.tempoJogado)
-            # self.imprimirTitulo(self.jogo.cidades[0].vitoriaCaso)
-            # self.imprimirTitulo(f"YAY! Você venceu o jogo! Sua pontuação foi de {self.jogo.tempoJogado}!")
             return True
         return False
     def checarSeTempoDeJogoAcabou(self):
@@ -216,12 +212,10 @@ class FluxoDeJogoLC:
         :return: Boolean True se não tem mais tempo de Jogo | False se tem
         """
         if (self.jogo.acordouEm - self.jogo.tempoJogado) >= 16:
-            # self.imprimirTitulo("Está na hora de dormir. Bons sonhos!")
-            # for x in range(5):
-            #     self.imprimirTexto("ZZZZZ...")
+
             self.janela.mostraDormir(self.jogo.tempoJogado)
-            # self.imprimirTexto(f"Bom dia. Você só tem {self.jogo.tempoJogado} horas para achar a Zefa. Vamos ver se ainda dá tempo?")
             self.jogo.tempoJogado -= 8
+            self.jogo.acordouEm = self.jogo.tempoJogado
             if self.checarSeTempoDeJogoAcabou():
                 return True
             self.janela.temTempo(self.jogo.tempoJogado)

@@ -1,6 +1,4 @@
 from View.Computador.Constantes import Estilos, Elementos
-from time import sleep
-import tkinter as tk
 class InfoComEscolha:
     """
     Mostra as informações de opções com escolhas como Investigar e Viajar e o principal
@@ -50,8 +48,6 @@ class InfoComEscolha:
 
     def limparInfo(self):
         Elementos.apagarElementoDaTela([self.titulo, self.info])
-        # self.titulo.grid_forget()
-        # self.info.grid_forget()
 
     def limparTudo(self):
         """
@@ -72,14 +68,13 @@ class InfoComEscolha:
 
         if self.tipo == "investigar":
             self.localDestino = self.janela.jogo.jogo.cidadeAtual.locais[opcao].local
-            self.tempoViagem = 1
             if self.testarTempo() == False:
                 return
             self.trocarInfo(self.janela.jogo.jogo.cidadeAtual.locais[opcao].local, f"{self.janela.jogo.jogo.cidadeAtual.locais[opcao].personagem}: {self.janela.jogo.jogo.cidadeAtual.locais[opcao].pista}")
 
+
             # Vendo se ganhou
-            if self.janela.jogo.jogo.cidadeAtual.locais[opcao].zefaEstaAqui:
-                self.janela.jogo.ganhou()
+            if self.janela.jogo.jogo.cidadeAtual.locais[opcao].zefaEstaAqui:       self.janela.jogo.ganhou()
 
         else:
 

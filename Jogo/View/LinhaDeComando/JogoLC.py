@@ -73,18 +73,34 @@ class JogoLC:
         print("\n/**********************/")
 
     def mostraInfoTranslado(self, tempo, destino):
-        print(f"Você vai levar {tempo} horas para chegar a {destino}")
+        if tempo == 1:
+            texto = "hora"
+        else:
+            texto = "horas"
+        print(f"Você vai levar {tempo} {texto} para chegar a {destino}")
     def mostraTempoRestante(self, tempo, tempoJogo):
-        print(f"Você acaba de viajar {tempo} horas. Você só tem {tempoJogo} para achar a Zefa")
+        if tempo == 1:
+            texto = "hora"
+        else:
+            texto = "horas"
+        print(f"Você acaba de viajar {tempo} {texto}. Você só tem {tempoJogo} horas para achar a Zefa")
 
     def mostraDormir(self, tempoJogado):
         print("Está na hora de dormir. Bons sonhos!")
         for x in range(5):
             print("ZZZZZ...")
-        print(f"Bom dia. Você só tem {tempoJogado} horas para achar a Zefa. Vamos ver se ainda dá tempo?")
+        if tempoJogado == 1:
+            texto = "hora"
+        else:
+            texto = "horas"
+        print(f"Bom dia. Você só tem {tempoJogado} {texto} para achar a Zefa. Vamos ver se ainda dá tempo?")
 
     def temTempo(self, tempoJogado):
-        print(f"Ufa, você ainda tem {tempoJogado} horas. Corre lá.")
+        if tempoJogado == 1:
+            texto = "hora"
+        else:
+            texto = "horas"
+        print(f"Ufa, você ainda tem {tempoJogado} {texto}. Corre lá.")
 
     def escolhaIvalida(self):
         print("Essa escolha não é válida. Favor entrar um dos valores válidos.")

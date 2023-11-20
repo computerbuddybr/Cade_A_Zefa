@@ -1,5 +1,4 @@
 from View.Computador.Constantes import Estilos, Elementos
-import tkinter as tk
 class InfoSemEscolha:
     """
     Mostra a informação de opções sem escolha como Destinos
@@ -12,16 +11,12 @@ class InfoSemEscolha:
         :param info: O texto que precisa mostrar
         """
         self.janela = janela
-        self.titulo = ""
         self.info = []
 
         # Variável de controle
         self.on = False
 
 
-        # self.mostrarInstrucoes()
-        #
-        # self.criandoBotoes()
 
 
 

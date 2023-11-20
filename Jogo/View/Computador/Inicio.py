@@ -1,5 +1,4 @@
 from View.Computador.Constantes import Estilos, Elementos
-import tkinter as tk
 class Inicio:
     """
     Mostra a informação inicial
@@ -45,12 +44,6 @@ class Inicio:
         """
         if self.on == True:
             Elementos.apagarElementoDaTela([self.titulo, self.caso, self.tarefa, self.botaoJ, self.botaoS, self.botaoD])
-            # self.titulo.grid_forget()
-            # self.caso.grid_forget()
-            # self.tarefa.grid_forget()
-            # self.botaoJ.grid_forget()
-            # self.botaoS.grid_forget()
-            # self.botaoD.grid_forget()
             self.on = False
 
 

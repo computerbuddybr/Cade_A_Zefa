@@ -45,7 +45,10 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Download DBeaver](https://dbeaver.io/download/)
 
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
-
+- [Adobe Colors](https://color.adobe.com/pt/create/color-wheel)
+- [Gerador de favicon - Favicon.cc](https://www.favicon.cc/)
+- [Gerador de favicon - Favicon-generator](https://www.favicon-generator.org/)
+)
 # Hardware usado nos projetos
 
 Os links foram colocados só para mostrar onde eu comprei, mas não é recomendação. Pesquise e compre onde e qual achar melhor.

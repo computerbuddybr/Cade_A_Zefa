@@ -2,8 +2,7 @@ from Controller.FluxoDeJogoComp import FluxoDeJogoComp
 from View.Computador.Constantes import Estilos, Elementos
 # Importamos a biblioteca tkinter para fazer as interfaces gráficas
 import tkinter as tk
-#Para usar temas
-from tkinter import ttk
+
 # Para usar fontes
 from tkinter import font
 
@@ -39,7 +38,7 @@ class Computador:
         print(f"Altura da janela: {self.alturaJanela}")
         print(f"Altura da linha: {self.janelaLinha}")
         # Com geometry eu dou um tamanho e posiciono a janela.
-        # self.app.geometry(f"{self.larguraJanela}x{self.alturaJanela}+0+0")
+        # self.app.geometry(f"{self.larguraJanela}x{self.alturaJanela}+200+200")
         # Define a janela como sendo fullscreen. Como nosso interesse é fazer um emulador que em teoria teria somente este jogo, é interessante pois não vai aparecer aqueles tradicionais botões de janela do sistema operacional. Porém é meio chato na hora de programar porque ocupa tudo. Por isso o método acima para a hora da programação. E trocar no deploy
         self.app.attributes('-fullscreen',True)
         # Definindo o ícone da janela
@@ -47,7 +46,7 @@ class Computador:
 
         # Criando as fontes que quero usar
         self.titulo = font.Font(weight="bold", family=Estilos.FONTE, size=32, slant="italic")
-        self.tituloNormal = font.Font(weight="bold", family=Estilos.FONTE, size=24)
+        self.tituloNormal = font.Font(weight="bold", family=Estilos.FONTE, size=32)
         self.negrito = font.Font(weight="bold", family=Estilos.FONTE, size=24)
         self.textoNormal = font.Font(family=Estilos.FONTE, size=24)
 

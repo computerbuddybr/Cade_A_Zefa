@@ -1,5 +1,4 @@
 from Model.ConexaoBD import ConexaoBD
-import Model.Cidade as Cidade
 from Model.Cidade import Cidade
 import random
 class Jogo:
@@ -28,7 +27,7 @@ class Jogo:
             for indiceCidade in range(0,9):
                 indice = random.randint(0, len(resultados) - 1)
                 print(resultados[indice][0])
-                indicesCidades.append(resultados[indice][0])
+                indicesCidades.append(resultados[indice]["pk_id_cidade"])
                 resultados.pop(indice)
             print(indicesCidades)
             return indicesCidades

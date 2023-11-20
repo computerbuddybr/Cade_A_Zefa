@@ -1,5 +1,4 @@
 from View.Computador.Constantes import Estilos, Elementos
-import tkinter as tk
 class Info:
     """
     Mostra a informação final
@@ -12,8 +11,6 @@ class Info:
        :param info: O texto que precisa mostrar
        """
         self.janela = janela
-        self.tituloTexto = ""
-        self.texto = ""
 
         # Variável de controle
         self.on = False
@@ -21,16 +18,6 @@ class Info:
 
 
 
-    def atualizarInfo(self, titulo, texto):
-        """
-        Atualiza a informação das variáveis
-        :param titulo:
-        :param texto:
-        :param locais:
-        :return:
-        """
-        self.tituloTexto = titulo
-        self.texto = texto
 
     def mostrarInstrucoes(self, titulo, texto):
         """
@@ -44,14 +31,6 @@ class Info:
 
 
 
-    def limparInfo(self):
-        """
-        Apaga os frames com informação
-        :return:
-        """
-        Elementos.apagarElementoDaTela([self.titulo, self.info])
-        self.titulo.grid_forget()
-        self.info.grid_forget()
 
     def limparTudo(self):
         """

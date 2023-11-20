@@ -35,7 +35,7 @@ class Elementos:
         :param corTexto: a cor do texto
         :return:
         """
-        return tk.Button(janela.frameOpcoes, text=texto, foreground=corTexto, background=corBotao, command=lambda: funcao(), padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal)
+        return tk.Button(janela.frameOpcoes, text=texto, foreground=corTexto, background=corBotao, command=lambda: funcao(), padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal, takefocus=True)
 
     @staticmethod
     def posicionarBotao(botao):
@@ -45,7 +45,6 @@ class Elementos:
         :param pos: posição do botão
         :return:
         """
-        # botao.grid(row=0, column=pos, padx=Estilos.PADX, pady=Estilos.PADY, sticky=tk.W+tk.E)
 
         botao.pack(fill=tk.BOTH, expand=1, side=tk.LEFT, padx=Estilos.PADX, pady=Estilos.PADY)
     @staticmethod
@@ -57,6 +56,7 @@ class Elementos:
         :param titulo: o título
         :return:
         """
+
         return tk.Label(frame, text=titulo, font=janela.titulo,bg=Estilos.FRAME, foreground=Estilos.BRANCO, wraplength=janela.wrap, anchor="center")
     @staticmethod
     def posicionarTitulo(titulo):
@@ -114,6 +114,4 @@ class Elementos:
         :return:
         """
         for elemento in elementos:
-            # elemento.forget_pack()
-            # elemento.grid_forget()
             elemento.forget()

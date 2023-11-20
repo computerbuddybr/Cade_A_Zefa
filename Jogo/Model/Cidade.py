@@ -8,7 +8,7 @@ class Cidade:
         Inicia a classe cidade
         param: conexãoBD: o objeto de conexão à base de dados
         param: id: o id da Cidade buscada
-        param: destino: o id da cidade de destino
+        param: destino: o indíce no array cidades da cidade de destino
         """
         self.destino = destino
         self.conexaoBD = conexaoBD
@@ -22,16 +22,18 @@ class Cidade:
 
 
         if len(resultado) >= 1:
-            self.id = resultado[0][0]
-            self.cidade = resultado[0][2]
-            self.latitude = resultado[0][3]
-            self.longitude = resultado[0][4]
-            self.cores_bandeira = resultado[0][8]
-            self.imagem_bandeira = resultado[0][9]
+
+            self.id = resultado[0]["pk_id_cidade"]
+            self.cidade = resultado[0]["cidade"]
+            self.latitude = resultado[0]["latitude"]
+            self.longitude = resultado[0]["longitude"]
+            self.cores_bandeira = resultado[0]["cores_bandeira"]
+            self.imagem_bandeira = resultado[0]["imagem_bandeira"]
+
             if self.imagem_bandeira !=  None:
                 # self.imagem_bandeira == False
                 print("Imagem bandeira não era None")
-            self.moeda = resultado[0][10]
+            self.moeda = resultado[0]["moeda"]
 
             sql = f"select * from curiosidades_cidades where fk_id_cidade = :id"
             parametros = {"id": self.id}
@@ -41,9 +43,9 @@ class Cidade:
 
             if quantidadeDeCuriosidades > 1:
                 indice = random.randint(0, quantidadeDeCuriosidades - 1)
-                self.curiosidade = curiosidades[indice][2]
+                self.curiosidade = curiosidades[indice]["curiosidade"]
             else:
-                self.curiosidade = curiosidades[0][2]
+                self.curiosidade = curiosidades[0]["curiosidade"]
             #Criando os locais desta cidade - as pistas serão atribuidas a estes locais na classe Jogo
             self.criarLocais()
             #Aqui estou buscando a pista da cidade para para depois atribuir onde esta cidade for destino
@@ -58,18 +60,15 @@ class Cidade:
         parametros = {"id": self.id}
         casos = self.conexaoBD.lerDadosParam(sql, parametros)
 
-        sql = f"select * from casos where fk_id_cidade = {self.id}"
-        casos = self.conexaoBD.lerDados(sql)
-        # print(curiosidades)
         quantidadeDeCasos = len(casos)
         indice = 0
         if quantidadeDeCasos > 0:
             if quantidadeDeCasos > 1:
                 indice = random.randint(0, quantidadeDeCasos - 1)
-            self.tituloCaso = casos[indice][2]
-            self.caso = casos[indice][3]
-            self.tarefaCaso = casos[indice][4]
-            self.vitoriaCaso = casos[indice][5]
+            self.tituloCaso = casos[indice]["titulo"]
+            self.caso = casos[indice]["caso"]
+            self.tarefaCaso = casos[indice]["tarefa"]
+            self.vitoriaCaso = casos[indice]["mensagem_de_vitoria"]
 
         else:
             self.erro = "Não há um caso com esse id de cidade"
@@ -86,7 +85,7 @@ class Cidade:
         print("Pistas da base")
         print(pistas)
         for pista in pistas:
-            self.pistasCidade.append(pista[0])
+            self.pistasCidade.append(pista["pista"])
         print("As pistas da cidade são:")
         print(self.pistasCidade)
     def criarLocais(self):
@@ -103,7 +102,7 @@ class Cidade:
                 indice = random.randint(0, len(locaisBase) - 1)
                 print(f"O local que vai ser colocado")
                 print(locaisBase[indice])
-                self.locais.append(Local(self.conexaoBD, locaisBase[indice][0],locaisBase[indice][1], locaisBase[indice][2], locaisBase[indice][3], locaisBase[indice][4]))
+                self.locais.append(Local(self.conexaoBD, locaisBase[indice]["pk_id_local"],locaisBase[indice]["local"], locaisBase[indice]["bandeira"], locaisBase[indice]["pista_cidade"], locaisBase[indice]["moeda"]))
                 locaisBase.pop(indice)
             print("Os locais")
 
@@ -154,7 +153,9 @@ class Cidade:
                 moedaUsada = True
                 continue
 
-            local.criarPistaCidade(destinos[self.destino])
+            print("Pistas antes do pop",destinos[self.destino].pistasCidade)
+            local.criarPistaCidade(destinos[self.destino].pistasCidade)
+            print("Pistas depois do pop",destinos[self.destino].pistasCidade)
         print("Resultado montagem locais")
         for newLocal in self.locais:
             print(f"A pista para o local: {newLocal.local} da cidade {self.cidade} é: {newLocal.pista}")
