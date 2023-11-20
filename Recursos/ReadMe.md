@@ -35,6 +35,10 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 - [Raspberry Pi Imager e Download do Sistema Operacional](https://www.raspberrypi.com/software/)
 
+- [Site Orange Pi](http://www.orangepi.org/)
+
+- [Site BanaPi](https://www.banana-pi.org/)
+
 - [Documentação Biblioteca Python Rpi.GPIO](https://pypi.org/project/RPi.GPIO/)
 
 - [Documentação da biblioteca Tkinter](https://docs.python.org/3/library/tkinter.html)
@@ -96,14 +100,29 @@ Nós vamos usar algumas bibliotecas do Python que não vem pré-instaladas. Não
 
 Nós iremos usar o haversine para calcular as distâncias. Para isso, abra o terminal do Raspberry Pi ou do seu computador e digite:
 
+No Windows, Mac ou Ubuntu use:
 ```bash
 sudo pip install haversine
 ``` 
 
+No Raspberry Pi use:
+
+```bash
+sudo apt install python3-haversine
+``` 
+
 E vamos usar a biblioteca abaixo para criar o executável final:
+
+No Windows, Mac ou Ubuntu use:
 ```bash	
 sudo pip install -U pyinstaller
 ```
+
+No Raspberry Pi use:
+
+```bash
+sudo apt install python3-pyinstaller
+``` 
 
 
 Além disso vamos precisar instalar os drivers do SQLite. No Raspberry Pi ou Linux em geral. Para isso, abra o terminal do Raspberry Pi e digite:
