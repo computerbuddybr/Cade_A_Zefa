@@ -6,7 +6,7 @@ class FluxoDeJogoBotoes7():
     Classe filha da classe FluxoDeJogo com alterações necerrárias para receber a entrada dos botões  físicos e não do teclado usando a biblioteca Rpi.GPIO
     """
     def __init__(self, janela):
-        # self.definicaoBotoes() # Preciso definir os botões antes de rodar o super, pois o construtor da classe mãe roda enquanto o botão desligar não tiver sido apertado
+        self.definicaoBotoes() # Preciso definir os botões antes de rodar o super, pois o construtor da classe mãe roda enquanto o botão desligar não tiver sido apertado
         self.jogo = Jogo()
         self.opcao = ""
         self.janela = janela
@@ -15,8 +15,8 @@ class FluxoDeJogoBotoes7():
 
 
     def definicaoBotoes(self):
-        pi.setmode(pi.BOARD)  # Configurando o tipo de leitura dos Pinos. Neste caso usando os números do GPIO
-        pi.setwarnings(False) # Desabilita avisos
+        # pi.setmode(pi.BOARD)  # Configurando o tipo de leitura dos Pinos. Neste caso usando os números do GPIO
+        # pi.setwarnings(False) # Desabilita avisos
         # Definindo em que pino está cada um - repare como as minhas chaves são exatamente o mesmo que eu espero na Linha de Comando. Desse modo só vou precisar alterar o método de entrada. Mas não o valor da entrada em si
         self.botoes = {
             "1": 40,
@@ -29,8 +29,8 @@ class FluxoDeJogoBotoes7():
         }
 
         # Configurando os pinos como entrada com Pull-up
-        for botao in self.botoes.values():
-            pi.setup(botao, pi.IN, pi.PUD_UP)
+        # for botao in self.botoes.values():
+        #     pi.setup(botao, pi.IN, pi.PUD_UP)
 
 
 
@@ -40,7 +40,7 @@ class FluxoDeJogoBotoes7():
         """
         Lê um botão
         :param botao: o número de pino do botão
-        :return: string
+        :return:
         """
         while True:
             # Fazendo um loop pelos botões. Uso o número do pino para ler e retorno a chave
@@ -91,11 +91,8 @@ class FluxoDeJogoBotoes7():
         :return:
         """
         # Variável que recebera as opções escolhidas
-        self.janela.limparTudo()
         self.opcao = ""
         self.iniciarJogo()
-        self.janela.janelaMenu.reiniciar(f"Boas vindas a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeInicial.curiosidade)
-        self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
 
 
 
@@ -110,7 +107,6 @@ class FluxoDeJogoBotoes7():
 
 
     def menuInicio(self, escolha):
-        print("menuInicio")
         if escolha == "v":
             print("Começar jogo")
             self.jogar()
@@ -125,7 +121,6 @@ class FluxoDeJogoBotoes7():
             return
 
     def menuJogo(self, escolha):
-        print("menuJogo")
         if escolha == "1":
             print("Investigar")
             self.investigar()
@@ -152,7 +147,6 @@ class FluxoDeJogoBotoes7():
             return
 
     def menuInvestigar(self, escolha):
-        print("menuInvestigar")
         if escolha == "1":
             print("Deslocar para 0")
             self.investigando(0)
@@ -191,7 +185,6 @@ class FluxoDeJogoBotoes7():
 
 
     def menuViajar(self, escolha):
-        print("menuViajar")
         if escolha == "1":
             print("Viajar para 0")
             self.viajando(0)
@@ -223,10 +216,9 @@ class FluxoDeJogoBotoes7():
         :return:
         """
         self.janela.janelaViajar.deslocar(escolha)
-        self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
+        self.janela.app.after(100, lambda: self.escolha("opcoes", self.menuInvestigar))
 
     def menuDestinos(self, escolha):
-        print("menuDestinos")
         if escolha == "v":
             print("Começar jogo")
             self.voltar()
@@ -240,7 +232,6 @@ class FluxoDeJogoBotoes7():
             self.janela.app.destroy()
             return
     def menuFinal(self, escolha):
-        print("menuFinal")
         if escolha == "s":
             print("Novo Jogo")
             self.novoJogo()
@@ -250,8 +241,10 @@ class FluxoDeJogoBotoes7():
             self.janela.app.destroy()
             return
 
-
-
+    def jogar(self):
+        self.janela.limparTudo()
+        self.janela.janelaMenu.reiniciar(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeInicial.curiosidade)
+        self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
 
     def investigar(self):
         self.janela.limparTudo()
@@ -316,21 +309,20 @@ class FluxoDeJogoBotoes7():
     def novoJogo(self):
         self.janela.limparTudo()
         self.jogo = Jogo()
-        self.janela.atualizarTempo("")
+        self.janela.atualizarTempo()
         self.iniciarJogo()
 
         print("Novo jogo")
 
 
-    def deslocar(self, tempoViagem, local):
+    def deslocar(self, tempoViagem):
         """
         Se desloca e checa se o jogo pode continuar
         :param tempoViagem: tempo gasto no deslocamento
         :return: False se acabou o tempo de jogo True se pode continuar
         """
         self.jogo.tempoJogado -= tempoViagem
-        self.infoTempo = f"Tempo depois do deslocamento para {local}"
-        self.janela.atualizarTempo(f"{self.infoTempo}:")
+        self.janela.atualizarTempo()
         if self.jogo.tempoJogado <= 0:
             return False
         return True
@@ -341,15 +333,13 @@ class FluxoDeJogoBotoes7():
         :return: 1 - Precisou dormir e acabou o tempo (deve mostrar dormir e depois a mensagem de que acabou o tempo
         :return: 2 -Precisou dormir e não acabou o tempo deve mostrar a mensagem de dormir e voltar ao fluxo de jogo
         """
-        self.infoTempo += " e de dormir"
         if self.jogo.acordouEm - self.jogo.tempoJogado >= 16:
             #TODO: Alterar mensagem para hora de dormir
             print("Hora de dormir")
             self.jogo.tempoJogado -= 8
             self.jogo.acordouEm = self.jogo.tempoJogado
-            self.janela.atualizarTempo(f"{self.infoTempo}:")
+            self.janela.atualizarTempo()
             if self.jogo.tempoJogado <= 0:
                 return 1
             return 2
         return 0
-
