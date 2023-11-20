@@ -1,6 +1,6 @@
 from Model.Jogo import Jogo
 # import RPi.GPIO as pi # Biblioteca de Raspberry Pi para leitura do GPIo (https://pypi.org/project/RPi.GPIO/)
-from time import sleep
+espera = 100
 class FluxoDeJogoBotoes7():
     """
     Classe filha da classe FluxoDeJogo com alterações necerrárias para receber a entrada dos botões  físicos e não do teclado usando a biblioteca Rpi.GPIO
@@ -103,10 +103,12 @@ class FluxoDeJogoBotoes7():
         """
         # Começa a janela inicial de jogo
         self.janela.janelaInicio.reiniciar()
-        self.janela.app.after(100, lambda: self.escolha("simples", self.menuInicio))
+        self.janela.app.after(espera, lambda: self.escolha("simples", self.menuInicio))
 
 
     def menuInicio(self, escolha):
+        print("Menu inicio")
+        print("Escolhas: v,s,d")
         if escolha == "v":
             print("Começar jogo")
             self.jogar()
@@ -121,6 +123,8 @@ class FluxoDeJogoBotoes7():
             return
 
     def menuJogo(self, escolha):
+        print("Menu Jogo")
+        print("Escolhas: 1,2,3 ,s,d")
         if escolha == "1":
             print("Investigar")
             self.investigar()
@@ -147,6 +151,8 @@ class FluxoDeJogoBotoes7():
             return
 
     def menuInvestigar(self, escolha):
+        print("Menu Investigar")
+        print("Escolhas: 1,2,3 v,s,d")
         if escolha == "1":
             print("Deslocar para 0")
             self.investigando(0)
@@ -179,12 +185,14 @@ class FluxoDeJogoBotoes7():
         :return:
         """
         self.janela.janelaInvestigar.deslocar(escolha)
-        self.janela.app.after(100, lambda: self.escolha("opcoes", self.menuInvestigar))
+        self.janela.app.after(espera, lambda: self.escolha("opcoes", self.menuInvestigar))
 
 
 
 
     def menuViajar(self, escolha):
+        print("Menu Viajar")
+        print("Escolhas: 1,2,3 v,s,d")
         if escolha == "1":
             print("Viajar para 0")
             self.viajando(0)
@@ -216,9 +224,11 @@ class FluxoDeJogoBotoes7():
         :return:
         """
         self.janela.janelaViajar.deslocar(escolha)
-        self.janela.app.after(100, lambda: self.escolha("opcoes", self.menuInvestigar))
+        self.janela.app.after(espera, lambda: self.escolha("menu", self.menuJogo))
 
     def menuDestinos(self, escolha):
+        print("Menu Destinos")
+        print("Escolhas: 1,2,3 v,s,d")
         if escolha == "v":
             print("Começar jogo")
             self.voltar()
@@ -232,6 +242,8 @@ class FluxoDeJogoBotoes7():
             self.janela.app.destroy()
             return
     def menuFinal(self, escolha):
+        print("Menu Final")
+        print("Escolhas: s,d")
         if escolha == "s":
             print("Novo Jogo")
             self.novoJogo()
@@ -244,7 +256,7 @@ class FluxoDeJogoBotoes7():
     def jogar(self):
         self.janela.limparTudo()
         self.janela.janelaMenu.reiniciar(f"Bem vindo a {self.jogo.cidadeAtual.cidade}", self.jogo.cidadeInicial.curiosidade)
-        self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
+        self.janela.app.after(espera, lambda: self.escolha("menu", self.menuJogo))
 
     def investigar(self):
         self.janela.limparTudo()
@@ -253,7 +265,7 @@ class FluxoDeJogoBotoes7():
             opcoes.append(opcao.local)
         self.janela.janelaInvestigar.reiniciar(f"Clique em uma das opções abaixo para começar a investigar na cidade de {self.jogo.cidadeAtual.cidade}", "Não se esqueça, deslocamentos dentro da cidade levam 1 hora!", opcoes)
         # self.escolha("opcoes", self.menuInvestigarOuViajar)
-        self.janela.app.after(100, lambda: self.escolha("opcoes", self.menuInvestigar))
+        self.janela.app.after(espera, lambda: self.escolha("opcoes", self.menuInvestigar))
     def viajar(self):
         print("Viajar")
         self.janela.limparTudo()
@@ -268,7 +280,7 @@ class FluxoDeJogoBotoes7():
         self.janela.janelaViajar.reiniciar("Para onde quer viajar? ", tempoDeVoo, opcoes)
         print("Destinos")
         # self.escolha("opcoes", self.menuInvestigarOuViajar)
-        self.janela.app.after(100, lambda: self.escolha("opcoes", self.menuViajar))
+        self.janela.app.after(espera, lambda: self.escolha("opcoes", self.menuViajar))
     def destinos(self):
         self.janela.limparTudo()
         opcoes = []
@@ -277,14 +289,14 @@ class FluxoDeJogoBotoes7():
         self.janela.janelaDestinos.reiniciar("Você pode viajar para: ", opcoes)
         print("Destinos")
         # self.escolha("simples", self.menuDestinos)
-        self.janela.app.after(100, lambda: self.escolha("simples", self.menuDestinos))
+        self.janela.app.after(espera, lambda: self.escolha("simples", self.menuDestinos))
 
     def voltar(self):
         print("Voltar")
         self.janela.limparTudo()
         self.janela.janelaMenu.reiniciar(self.jogo.cidadeAtual.cidade, "Qual seu próximo passo? Clique em um dos botões abaixo para escolher.")
         # self.escolha("opcoes", self.menuJogo)
-        self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
+        self.janela.app.after(espera, lambda: self.escolha("menu", self.menuJogo))
 
     def novaCidade(self, cidade):
         self.jogo.cidadeAtual = cidade
@@ -292,24 +304,24 @@ class FluxoDeJogoBotoes7():
         self.janela.limparTudo()
         self.janela.janelaMenu.reiniciar(self.jogo.cidadeAtual.cidade, self.jogo.cidadeAtual.curiosidade)
         # self.escolha("opcoes", self.menuJogo)
-        self.janela.app.after(100, lambda: self.escolha("menu", self.menuJogo))
+        self.janela.app.after(espera, lambda: self.escolha("menu", self.menuJogo))
 
     def acabouJogo(self):
         print("Acabou o jogo")
         self.janela.limparTudo()
         self.janela.janelaInfo.reiniciar("Que pena! Acabou seu tempo!", "Mas não desanime, você ainda terá outras oportunidades de capturar a Zefa!")
         # self.escolha("final", self.menuFinal())
-        self.janela.app.after(100, lambda: self.escolha("final", self.menuFinal))
+        self.janela.app.after(espera, lambda: self.escolha("final", self.menuFinal))
     def ganhou(self):
         print("Ganhou")
         self.janela.limparTudo()
         self.janela.janelaInfo.reiniciar("Eba! Você capturou a Zefa com sucesso!", self.jogo.cidadeInicial.vitoriaCaso)
         self.escolha("final", self.menuFinal)
-        self.janela.app.after(100, lambda: self.escolha("final", self.menuFinal))
+        self.janela.app.after(espera, lambda: self.escolha("final", self.menuFinal))
     def novoJogo(self):
         self.janela.limparTudo()
         self.jogo = Jogo()
-        self.janela.atualizarTempo()
+        self.janela.atualizarTempo("")
         self.iniciarJogo()
 
         print("Novo jogo")

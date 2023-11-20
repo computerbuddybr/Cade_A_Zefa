@@ -62,9 +62,9 @@ class InfoComEscolha:
         self.limparInfo()
         self.mostrarInstrucoes(titulo, texto)
 
-    def deslocar(self, op):
+    def deslocar(self, opcao):
         # Como eu recebo um string iniciando em um, preciso transformar em um int e subtrair 1 para ter a posição de índice correto
-        opcao = int(op) - 1
+
 
 
         if self.tipo == "investigar":
