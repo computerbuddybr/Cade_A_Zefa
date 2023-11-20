@@ -85,14 +85,14 @@ class FluxoDeJogoBotoes7():
         return input()
 
 
-    def jogar(self):
-        """
-        Começa o jogo.
-        :return:
-        """
-        # Variável que recebera as opções escolhidas
-        self.opcao = ""
-        self.iniciarJogo()
+    # def jogar(self):
+    #     """
+    #     Começa o jogo.
+    #     :return:
+    #     """
+    #     # Variável que recebera as opções escolhidas
+    #     self.opcao = ""
+    #     self.iniciarJogo()
 
 
 
@@ -315,14 +315,15 @@ class FluxoDeJogoBotoes7():
         print("Novo jogo")
 
 
-    def deslocar(self, tempoViagem):
+    def deslocar(self, tempoViagem, local):
         """
         Se desloca e checa se o jogo pode continuar
         :param tempoViagem: tempo gasto no deslocamento
         :return: False se acabou o tempo de jogo True se pode continuar
         """
         self.jogo.tempoJogado -= tempoViagem
-        self.janela.atualizarTempo()
+        self.infoTempo = f"Tempo depois do deslocamento para {local}"
+        self.janela.atualizarTempo(f"{self.infoTempo}:")
         if self.jogo.tempoJogado <= 0:
             return False
         return True
@@ -334,11 +335,11 @@ class FluxoDeJogoBotoes7():
         :return: 2 -Precisou dormir e não acabou o tempo deve mostrar a mensagem de dormir e voltar ao fluxo de jogo
         """
         if self.jogo.acordouEm - self.jogo.tempoJogado >= 16:
-            #TODO: Alterar mensagem para hora de dormir
+            self.infoTempo += " e de dormir"
             print("Hora de dormir")
             self.jogo.tempoJogado -= 8
             self.jogo.acordouEm = self.jogo.tempoJogado
-            self.janela.atualizarTempo()
+            self.janela.atualizarTempo(f"{self.infoTempo}:")
             if self.jogo.tempoJogado <= 0:
                 return 1
             return 2

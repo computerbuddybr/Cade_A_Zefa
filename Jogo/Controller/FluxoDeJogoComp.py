@@ -97,9 +97,9 @@ class FluxoDeJogoComp:
         :return: 1 - Precisou dormir e acabou o tempo (deve mostrar dormir e depois a mensagem de que acabou o tempo
         :return: 2 -Precisou dormir e não acabou o tempo deve mostrar a mensagem de dormir e voltar ao fluxo de jogo
         """
-        self.infoTempo += " e de dormir"
-        if self.jogo.acordouEm - self.jogo.tempoJogado >= 16:
 
+        if self.jogo.acordouEm - self.jogo.tempoJogado >= 16:
+            self.infoTempo += " e de dormir"
             self.jogo.tempoJogado -= 8
             self.jogo.acordouEm = self.jogo.tempoJogado
             self.janela.atualizarTempo(f"{self.infoTempo}:")
