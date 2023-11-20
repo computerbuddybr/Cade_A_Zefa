@@ -53,6 +53,9 @@ class FluxoDeJogoBotoes7():
         Checa se a escolha feita está dentro das possibilidades, se não continua esperando resposta
         :return:
         """
+        print("Na função escolha:")
+        print("Tipo menu: ", tipoMenu)
+        print("função de menu: ", menu)
         if tipoMenu == "simples":
             possibilidades = ["v", "s", "d"]
         elif tipoMenu == "final":
@@ -85,14 +88,6 @@ class FluxoDeJogoBotoes7():
         return input()
 
 
-    # def jogar(self):
-    #     """
-    #     Começa o jogo.
-    #     :return:
-    #     """
-    #     # Variável que recebera as opções escolhidas
-    #     self.opcao = ""
-    #     self.iniciarJogo()
 
 
 
@@ -224,7 +219,6 @@ class FluxoDeJogoBotoes7():
         :return:
         """
         self.janela.janelaViajar.deslocar(escolha)
-        self.janela.app.after(espera, lambda: self.escolha("menu", self.menuJogo))
 
     def menuDestinos(self, escolha):
         print("Menu Destinos")
