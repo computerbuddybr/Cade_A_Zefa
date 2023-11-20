@@ -96,36 +96,68 @@ Os links foram colocados só para mostrar onde eu comprei, mas não é recomenda
 
 Nós vamos usar algumas bibliotecas do Python que não vem pré-instaladas. Não se preocupe. Não são dificeis de instalar. Vamos lá.
 
->Aqui temos uma ressalva importante. Use o comando pip e não pip3. O pip3 roda mas ele instala as bibliotecas em um ambiente virtual que ele cria e não onde o Raspberry Pi OS procura. 
+>Aqui temos uma ressalva importante. Vamos poder usar o comando pip globalmente no Window, Mac e maioria dos Linux mas não no Raspberry Pi. As instruções para Raspberry Pi estão logo abaixo. 
+## Windows, Linux, Mac
 
 Nós iremos usar o haversine para calcular as distâncias. Para isso, abra o terminal do Raspberry Pi ou do seu computador e digite:
 
 No Windows, Mac ou Ubuntu use:
 ```bash
-sudo pip install haversine
-``` 
-
-No Raspberry Pi use:
-
-```bash
-sudo apt install python3-haversine
+pip install haversine
 ``` 
 
 E vamos usar a biblioteca abaixo para criar o executável final:
 
 No Windows, Mac ou Ubuntu use:
 ```bash	
-sudo pip install -U pyinstaller
+pip install -U pyinstaller
 ```
+## Raspberry Pi OS Bookworm para cima
 
-No Raspberry Pi use:
+Você precisará criar um ambiente virtual para rodar o python separado do python do sistema. Para abra o terminal e navegue até a pasta onde você quer criar o ambiente virtual. O ideal é criar um ambiente virtual para cada projeto. Em geral a prática é criar a mesma pasta do projeto. Uma vez nesta pasta, digite:
 
 ```bash
-sudo apt install python3-pyinstaller
-``` 
+python -m venv nomeAmbienteVirtual
+```
+O nome pode ser o que você quiser. Em geral é usado o nome venv. Mas você pode usar o nome que quiser. 
+
+Você perceberá que será criada uma pasta com o nome que você escolheu. Naguegue até ela com
 
 
-Além disso vamos precisar instalar os drivers do SQLite. No Raspberry Pi ou Linux em geral. Para isso, abra o terminal do Raspberry Pi e digite:
+```bash
+cd nomeAmbienteVirtual
+```
+Agora você precisa ativar o ambiente virtual. Digite:
+
+```bash
+source bin/activate
+```
+
+Isto deve ter feito com que de agora em diante, quando você digitar python, ele use o python do ambiente virtual e não o do sistema. Para testar, digite:
+
+```bash
+which python
+```
+
+Deveria ter retornado algo como:
+
+```bash
+/home/seuUsuario/nomeAmbienteVirtual/bin/python
+```
+Basicamente, o caminho para o Python na pasta bin do ambiente virtual que você criou. Se ainda estiver usando o do sistema vai retornar.
+
+```bash
+/usr/bin/python
+```
+
+Se tiver dado tudo certo agora você pode usar o comando pip normalmente. Para instalar o heversine digite:
+
+```bash
+pip install haversine
+```
+# Instalação driver SQLite
+
+Vamos precisar instalar os drivers do SQLite. No Raspberry Pi ou Linux em geral abra o terminal e digite:
 
 ```bash
 sudo apt install sqlite3
