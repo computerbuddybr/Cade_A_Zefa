@@ -21,9 +21,6 @@ class Menu():
 
 
 
-    def limparInfo(self):
-        Elementos.apagarElementoDaTela([self.titulo, self.info])
-
     def limparTudo(self):
         """
         Apaga toda a informação
@@ -34,9 +31,6 @@ class Menu():
             self.on = False
 
 
-    def trocarInfo(self, titulo, texto):
-        self.limparInfo()
-        self.mostrarInstrucoes(titulo, texto)
 
     def reiniciar(self, titulo, texto):
         self.limparTudo()

@@ -81,8 +81,6 @@ class InfoSemEscolha:
         """
 
         # Criando os botões
-        # Criando os botões
-
         self.botaoV = Elementos.criarBotao(self.janela, "Voltar",  Estilos.AZUL, Estilos.BRANCO)
 
         self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo",  Estilos.PRETO, Estilos.BRANCO)

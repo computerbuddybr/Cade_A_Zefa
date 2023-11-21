@@ -1,5 +1,4 @@
 import tkinter as tk
-# from tkinter import ttk as tk
 class Estilos:
     FUNDO = "#6e09e2"
     FRAME = "#AA7DE3"
@@ -36,7 +35,7 @@ class Elementos:
         :param corTexto: a cor do texto
         :return:
         """
-        return tk.Label(janela.frameOpcoes, text=texto, foreground=corTexto, background=corBotao,  padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal)
+        return tk.Label(janela.frameOpcoes, text=texto, foreground=corTexto, bg=corBotao,  padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal)
 
     @staticmethod
     def posicionarBotao(botao):
@@ -113,6 +112,4 @@ class Elementos:
         :return:
         """
         for elemento in elementos:
-            # elemento.forget_pack()
-            # elemento.grid_forget()
             elemento.forget()

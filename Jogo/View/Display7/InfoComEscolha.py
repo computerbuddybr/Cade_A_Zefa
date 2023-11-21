@@ -13,10 +13,7 @@ class InfoComEscolha:
         self.janela = janela
         self.tipo = tipo
         # Aqui iniciamos a variável com valores padrões que depois serão trocados simplesmente para não causar bugs de inicialização
-        if self.tipo == "investigar":
-            self.tempoViagem = 1
-        else:
-            self.tempoViagem = 10
+
         self.opcoes = []
 
         # Variável de controle

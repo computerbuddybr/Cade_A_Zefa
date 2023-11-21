@@ -43,15 +43,6 @@ class Info:
 
 
 
-    def limparInfo(self):
-        """
-        Apaga os frames com informação
-        :return:
-        """
-        Elementos.apagarElementoDaTela([self.titulo, self.info])
-        self.titulo.grid_forget()
-        self.info.grid_forget()
-
     def limparTudo(self):
         """
         Apaga os frames com informação e botões
@@ -59,10 +50,6 @@ class Info:
         """
         if self.on == True:
             Elementos.apagarElementoDaTela([self.titulo, self.info, self.botaoS, self.botaoD])
-            # self.titulo.grid_forget()
-            # self.info.grid_forget()
-            # self.botaoS.grid_forget()
-            # self.botaoD.grid_forget()
             self.on = False
 
 

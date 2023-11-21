@@ -203,6 +203,9 @@ Pronto. Temos todo o ambiente de desenvolvimento que vamos precisar.
 **Protoboard, placa adaptadora Raspberry Pi, 6 botões**
 ![](imagens/fotos/protoboard.jpg)
 
+**Protoboard, placa adaptadora Raspberry Pi, 6 botões**
+![](imagens/fotos/foto_pinos.jpg)
+
 
 ## Prints do jogo
 **Tela Inicial**

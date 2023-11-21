@@ -19,7 +19,6 @@ class Inicio:
 
 
 
-
     def mostrarInstrucoes(self):
         """
         Mostra as informações
@@ -54,6 +53,8 @@ class Inicio:
         :param texto: texto que precisa mostrar
         :return:
         """
+        if self.on == True:
+            self.limparTudo()
         self.on = True
         self.mostrarInstrucoes()
         self.criandoBotoes()
