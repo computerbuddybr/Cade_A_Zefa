@@ -1,4 +1,3 @@
-from Model.Jogo import Jogo
 from Controller.FluxoDeJogoComp import FluxoDeJogoComp
 # import RPi.GPIO as pi
 class FluxoDeJogoBotoes7(FluxoDeJogoComp):

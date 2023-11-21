@@ -67,8 +67,7 @@ class Info:
         self.botoes = {
             "s": self.botaoS,
             "d": self.botaoD,
-
-    }
+        }
 
     def criandoBotoes(self):
         """

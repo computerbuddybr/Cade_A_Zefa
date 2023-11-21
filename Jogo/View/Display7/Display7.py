@@ -20,7 +20,7 @@ class Display7:
         # Criando a janela
         self.app = tk.Tk()
         # Atribuindo título a janela
-        self.app.title("Cadê a Zefa, gente!")
+        # self.app.title("Cadê a Zefa, gente!")
         # Atribuindo uma cor de fundo a janela
         self.app.configure(background=Estilos.FUNDO)
         ## Descobrindo a altura e largura da janela para poder posicionar nossos elementos
@@ -42,7 +42,7 @@ class Display7:
         # Define a janela como sendo fullscreen. Como nosso interesse é fazer um emulador que em teoria teria somente este jogo, é interessante pois não vai aparecer aqueles tradicionais botões de janela do sistema operacional. Porém é meio chato na hora de programar porque ocupa tudo. Por isso o método acima para a hora da programação. E trocar no deploy
         self.app.attributes('-fullscreen',True)
         # Definindo o ícone da janela
-        self.app.iconbitmap(default="recursos/imagens/zefa.ico")
+        # self.app.iconbitmap(default="recursos/imagens/zefa.ico")
 
         # Criando as fontes que quero usar
         self.titulo = font.Font(weight="bold", family=Estilos.FONTE, size=32, slant="italic")
@@ -89,6 +89,7 @@ class Display7:
         # Aqui eu tenho que iniciar o loop da janela
 
         self.app.mainloop()
+
 
 
 
