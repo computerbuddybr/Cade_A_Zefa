@@ -11,11 +11,17 @@ class InfoSemEscolha:
         :param info: O texto que precisa mostrar
         """
         self.janela = janela
-        self.tituloTexto = ""
         self.info = []
 
         # Variável de controle
         self.on = False
+
+        # Criando e definindo os botões
+        self.criandoBotoes()
+        self.definindoBotoes()
+        Elementos.apagarElementoDaTela([self.botaoV, self.botaoS, self.botaoD]) # Vamos rapidamente apagar os botões para que eles não apareçam
+
+
 
 
 
@@ -70,10 +76,22 @@ class InfoSemEscolha:
         """
         self.on = True
         self.atualizarInfo(titulo, info)
-        # self.limparTudo()
         self.mostrarInstrucoes()
         self.criandoBotoes()
+        self.janela.app.after(Estilos.TEMPO, lambda: self.janela.jogo.escolha(self.possibilidades, self.botoes))
 
+
+    def definindoBotoes(self):
+        """
+        Definindo os botões a serem escolhidos
+        """
+        self.possibilidades = ["v", "s", "d"]
+        self.botoes = {
+            "v": self.botaoV,
+            "s": self.botaoS,
+            "d": self.botaoD,
+
+        }
     def criandoBotoes(self):
         """
         Cria os botões
@@ -81,11 +99,13 @@ class InfoSemEscolha:
         """
 
         # Criando os botões
-        self.botaoV = Elementos.criarBotao(self.janela, "Voltar",  Estilos.AZUL, Estilos.BRANCO)
+        # Criando os botões
 
-        self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo",  Estilos.PRETO, Estilos.BRANCO)
+        self.botaoV = Elementos.criarBotao(self.janela, "Voltar", self.janela.jogo.voltar, Estilos.AZUL, Estilos.BRANCO)
 
-        self.botaoD = Elementos.criarBotao(self.janela, "Desligar",  Estilos.VERMELHO, Estilos.BRANCO)
+        self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo", self.janela.jogo.novoJogo, Estilos.PRETO, Estilos.BRANCO)
+
+        self.botaoD = Elementos.criarBotao(self.janela, "Desligar", self.janela.app.destroy, Estilos.VERMELHO, Estilos.BRANCO)
 
         # Posicionando os botões
 

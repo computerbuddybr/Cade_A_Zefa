@@ -1,5 +1,6 @@
 import tkinter as tk
 class Estilos:
+    TEMPO = 100
     FUNDO = "#6e09e2"
     FRAME = "#AA7DE3"
     INFO = "#DE97FA"
@@ -24,7 +25,7 @@ class Elementos:
     Classe com métodos para ajudar a criar os elementos com a mesma estilização
     """
     @staticmethod
-    def criarBotao(janela, texto, corBotao, corTexto):
+    def criarBotao(janela, texto, funcao, corBotao, corTexto):
         """
         Cria elemento de botão já com o estilo correto
         :param janela: elemento de app
@@ -35,7 +36,7 @@ class Elementos:
         :param corTexto: a cor do texto
         :return:
         """
-        return tk.Label(janela.frameOpcoes, text=texto, foreground=corTexto, bg=corBotao,  padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal)
+        return tk.Button(janela.frameOpcoes, text=texto, foreground=corTexto, background=corBotao, command=lambda: funcao(), padx=Estilos.PADX, pady=Estilos.PADY,font=janela.textoNormal, takefocus=True)
 
     @staticmethod
     def posicionarBotao(botao):
@@ -56,6 +57,7 @@ class Elementos:
         :param titulo: o título
         :return:
         """
+
         return tk.Label(frame, text=titulo, font=janela.titulo,bg=Estilos.FRAME, foreground=Estilos.BRANCO, wraplength=janela.wrap, anchor="center")
     @staticmethod
     def posicionarTitulo(titulo):
@@ -104,6 +106,7 @@ class Elementos:
         :return:
         """
         frame.pack(fill=tk.BOTH, expand=1, padx=Estilos.PADX, pady=Estilos.PADY)
+        # frame.grid(row=pos, column=0, padx=Estilos.PADX, pady=Estilos.PADY)
     @staticmethod
     def apagarElementoDaTela(elementos):
         """

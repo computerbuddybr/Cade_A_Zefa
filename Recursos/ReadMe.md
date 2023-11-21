@@ -155,6 +155,10 @@ Se tiver dado tudo certo agora você pode usar o comando pip normalmente. Para i
 ```bash
 pip install haversine
 ```
+E vamos precisar a biblioteca para controlar o GPIO
+```bash
+pip install RPi.GPIO
+```
 # Instalação driver SQLite
 
 Vamos precisar instalar os drivers do SQLite. No Raspberry Pi ou Linux em geral abra o terminal e digite:

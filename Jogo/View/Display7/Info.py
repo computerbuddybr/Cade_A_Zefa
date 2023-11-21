@@ -11,25 +11,19 @@ class Info:
        :param info: O texto que precisa mostrar
        """
         self.janela = janela
-        self.tituloTexto = ""
-        self.texto = ""
 
         # Variável de controle
         self.on = False
 
+        # Criando e definindo os botões
+        self.criandoBotoes()
+        self.definindoBotoes()
+        Elementos.apagarElementoDaTela([self.botaoS, self.botaoD]) # Vamos rapidamente apagar os botões para que eles não apareçam
 
 
 
-    def atualizarInfo(self, titulo, texto):
-        """
-        Atualiza a informação das variáveis
-        :param titulo:
-        :param texto:
-        :param locais:
-        :return:
-        """
-        self.tituloTexto = titulo
-        self.texto = texto
+
+
 
     def mostrarInstrucoes(self, titulo, texto):
         """
@@ -40,6 +34,7 @@ class Info:
         self.info = Elementos.criarTexto(self.janela, self.janela.frameJogo, texto)
         Elementos.posicionarTitulo(self.titulo)
         Elementos.posicionarTexto(self.info)
+
 
 
 
@@ -60,20 +55,29 @@ class Info:
         :param texto: texto que precisa mostrar
         :return:
         """
-
-
         self.on = True
         self.mostrarInstrucoes(titulo, texto)
         self.criandoBotoes()
+        self.janela.app.after(Estilos.TEMPO, lambda: self.janela.jogo.escolha(self.possibilidades, self.botoes))
+
+
+
+    def definindoBotoes(self):
+        self.possibilidades = ["s", "d"]
+        self.botoes = {
+            "s": self.botaoS,
+            "d": self.botaoD,
+
+    }
+
     def criandoBotoes(self):
         """
         Cria os botões
         :return:
         """
+        self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo", self.janela.jogo.novoJogo, Estilos.PRETO, Estilos.BRANCO)
 
-        self.botaoS = Elementos.criarBotao(self.janela, "Novo Jogo", Estilos.PRETO, Estilos.BRANCO)
-
-        self.botaoD = Elementos.criarBotao(self.janela, "Desligar", Estilos.VERMELHO, Estilos.BRANCO)
+        self.botaoD = Elementos.criarBotao(self.janela, "Desligar", self.janela.app.destroy, Estilos.VERMELHO, Estilos.BRANCO)
 
         Elementos.posicionarBotao(self.botaoS)
         Elementos.posicionarBotao(self.botaoD)
