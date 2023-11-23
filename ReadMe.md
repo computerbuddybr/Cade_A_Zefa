@@ -37,6 +37,13 @@ Há já uma base de dados pronta com 35 cidades, seus casos e pistas. Porém est
 
 Bons estudos!
 
+### A escolha do nome
+Este projeto é voltado para escolas brasileiras e queriamos um nome que fosse bem emblemático do Brasil. Que mostrasse nossa cultura de acolhimento. Nossa cultura de sempre sermos simpáticos e já acolher os outros de cara. Por isso mesmo é um apelido, e não o nome. Porque isso também é um traço nosso de sermos informais e de sempre termos um apelido para todo mundo. E também porque é um nome que é comum no Brasil, mas não em outros países. 
+
+Eu gosto muito do nome justamente por isso. Por ele representar o que eu mais amo do nosso país que é essa simpatia do Brasileiro. Essa disponibilidade para ajudar. Tive oportunidade de morar fora várias vezes e sempre decidi voltar para o Brasil. Apesar de ter morado nos Estados Unidos e a Europa eu ainda considero o Brasil, com todos seus problemas, o melhor lugar para morar. E é por causa do Brasileiro. Problemas você encontra em todo lugar. Mas esse jeito, de ajudar um ao outro não. E eu acho que isso é o que faz o Brasil ser um lugar tão especial. E é por isso que eu quis colocar esse nome no jogo. Porque eu acho que ele representa o que eu mais amo do Brasil.
+
+A Zefa é uma ladra internacional. Ela é perigosa. Mas ela não deixa de ser brasileira. Portanto mesmo perigosa, ela é simpática. Muitas pistas serão de como ela conversou com alguém que a estava atendendendo, sobre algum assunto. Batendo papo mesmo. Porque isso é muito nosso. De chegar em qualquer lugar, no bar, na fila do banco, da padaria, e começar a conversar com estranhos como se fossem amigos de longa data. E é claro, que nossa ladra não vai ser diferente. Ela vai chegar em qualquer lugar e vai começar a conversar com as pessoas. E é claro que ela vai deixar pistas. Porque ela é brasileira. E ela é simpática. E é por isso que o jogo se chama "Cadê a Zefa, gente!".
+
 ### A licença
 
 O código e tutoriais está sendo fornecido de forma gratuita para ser usado baixo as regras da licença GNU GPL (Licença Geral Pública). Você pode usar e distribuir este material à vontade. Você não pode vendê-lo ou usá-lo para fins lucrativos. Não foi criado para fins lucrativos, mas para fins educacionais.
