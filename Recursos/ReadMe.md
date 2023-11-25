@@ -10,7 +10,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 2](https://www.youtube.com/watch?v=nJkVHusJp6E&list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 3](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
-    - **Requisitos mínimos:** variáveis, funções, tipos de dados, coleções, estrutras condicionais, classes e objetos
+    - **Requisitos mínimos:** variáveis, funções, tipos de dados, coleções, estrutras condicionais, estruturas de repetição (laços), classes e objetos
 
 - Básico de SQL 
     - [Curso Gratuito de MySQL Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=Ofktsne-utM&list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r) - Ah, mas este não é de SQLite. Não se preocupe. Os comandos e ideias são os mesmos. Apenas a sintaxe é um pouco diferente. Mas você vai conseguir acompanhar tranquilamente. o SQLite é mais simples que o MySQL, permite menos coisas, mas eu vou falar disso quando falar da base de dados.
@@ -234,5 +234,14 @@ Pronto. Temos todo o ambiente de desenvolvimento que vamos precisar.
 ![](imagens/prints_jogo/tela_final.png)
 
 
+## Criando o executável
 
+Caso você queira criar um instalador, você precisará criar um executável. Para isso, por favor assista este vídeo: 
+
+
+No seu projeto você vai precisar abrir a linha de comando e rodar:
+
+```bash	
+pyinstaller --name CadeAZefa --onefile --windowed --icon=zefa.ico main.py  --hidden-import helper_function --hidden-import Controller.FluxoDeJogoComp  --hidden-import View.Computador.InfoComEscolha --hidden-import View.Computador.InfoSemEscolha --hidden-import View.Computador.Info --hidden-import View.Computador.Menu --hidden-import View.Computador.Inicio --hidden-import haversine --hidden-import Model.Local --hidden-import Model.Cidade --hidden-import Moel.Jogo --hidden-import Model.ConexaoBD --hidden-import View.Computador.Computador
+```
 
