@@ -1,5 +1,5 @@
 # Cadê a Zefa Gente!
-## Jogo educacional
+## Tutorial de Jogo educacional em Tkinter para Desktop e Raspberry Pi
 
 ### Informações
 - **Autora:** Adriana Laura Cerdeira

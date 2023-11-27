@@ -44,15 +44,17 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Documentação da biblioteca Tkinter](https://docs.python.org/3/library/tkinter.html)
 
 - [Documentação da biblioteca sqlite3](https://docs.python.org/3/library/sqlite3.html)
-
+- [SQLite Download](https://www.sqlite.org/download.html)
 - [Documentação PyInstaller](https://pyinstaller.org/en/stable/)
+
 - [Download DBeaver](https://dbeaver.io/download/)
 
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 - [Adobe Colors](https://color.adobe.com/pt/create/color-wheel)
 - [Gerador de favicon - Favicon.cc](https://www.favicon.cc/)
 - [Gerador de favicon - Favicon-generator](https://www.favicon-generator.org/)
-)
+- [Inno Setup](https://jrsoftware.org/isinfo.php)
+
 # Hardware usado nos projetos
 
 Os links foram colocados só para mostrar onde eu comprei, mas não é recomendação. Pesquise e compre onde e qual achar melhor.
@@ -110,7 +112,7 @@ E vamos usar a biblioteca abaixo para criar o executável final:
 
 No Windows, Mac ou Ubuntu use:
 ```bash	
-pip install -U pyinstaller
+pip install pyinstaller
 ```
 ## Raspberry Pi OS Bookworm para cima
 
@@ -173,6 +175,29 @@ No Windows, você precisa:
 - Renomear a pasta para SQLite3 e transferir para a raiz do disco C.
 - Adicionar o caminho da pasta as Variáveis de Ambientes Path.
 Pronto. Temos todo o ambiente de desenvolvimento que vamos precisar.
+
+# Requisitos Funcionais de Programação
+- RF 01 – O sistema deve criar um caso para o jogo com nove cidades, sendo uma a cidade inicial, uma a final, e três cidades de pistas falsas de forma aleatória.
+- RF 02 - O sistema deve permitir ao usuário investigar, visualizar os destinos e viajar.
+- RF 03 - O sistema deve permitir ao usuário escolher uma opção de 3.
+- RF 04 - O sistema deve calcular o tempo de viagem para cada escolha.
+- RF 05 - O sistema deve informar ao usuário se ele capturou a Zefa ou não.
+- RF 06 - O sistema deve deduzir o número de horas gastos em deslocamentos e dormir do número de horas totais disponíveis.
+- RF 07 - O sistema deve permitir ao usuário se deslocar para os locais de investigação em cada cidade.
+- RF 08 - O sistema deve permitir ao usuário viajar para outros países.
+- RF 09 - O sistema deve permitir ao usuário visualizar os destinos possíveis.
+- RF 10 - O sistema deve permitir ao usuário capturar a Zefa.
+- RF 11 - O sistema deve permitir ao usuário voltar ao menu anterior.
+- RF 12 – O sistema deve permitir ao usuário gerar um novo jogo.
+
+# Requisitos Não Funcionais de Programação
+
+- RNF 01 - O sistema deve ser capaz de rodar em um Raspberry Pi 3B+.
+- RNF 02 - O sistema deve ser criado em Python.
+- RNF 03 - O sistema deve ter no máximo seis botões.
+- RFN 04 – O sistema deve ser criado em três versões de possibilidade de entradas e saídas: Linha de Comando, Display 7” com seis botões, Desktop com interface gráfica 
+- RFN 05 - O sistema deve permitir escolhas simplesmente com os seis botões.
+
 
 # Diagrama da Base de Dados
 
@@ -242,6 +267,6 @@ Caso você queira criar um instalador, você precisará criar um executável. Pa
 No seu projeto você vai precisar abrir a linha de comando e rodar:
 
 ```bash	
-pyinstaller --name CadeAZefa --onefile --windowed --icon=zefa.ico main.py  --hidden-import helper_function --hidden-import Controller.FluxoDeJogoComp  --hidden-import View.Computador.InfoComEscolha --hidden-import View.Computador.InfoSemEscolha --hidden-import View.Computador.Info --hidden-import View.Computador.Menu --hidden-import View.Computador.Inicio --hidden-import haversine --hidden-import Model.Local --hidden-import Model.Cidade --hidden-import Moel.Jogo --hidden-import Model.ConexaoBD --hidden-import View.Computador.Computador
+pyinstaller --name CadeAZefa --onefile -w --icon=zefa.ico main.py  --hidden-import Controller.FluxoDeJogoComp  --hidden-import View.Computador.InfoComEscolha --hidden-import View.Computador.InfoSemEscolha --hidden-import View.Computador.Info --hidden-import View.Computador.Menu --hidden-import View.Computador.Inicio --hidden-import haversine --hidden-import Model.Local --hidden-import Model.Cidade --hidden-import Moel.Jogo --hidden-import Model.ConexaoBD --hidden-import View.Computador.Computador
 ```
 
