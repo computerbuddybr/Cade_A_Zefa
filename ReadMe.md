@@ -29,7 +29,7 @@ A pasta [DBModelagem](Recursos/DBModelagem/) possui o modelo da base de dados em
 
 Neste projeto, criaremos um jogo de detetive chamado "Cadê a Zefa, gente!" onde o jogador deve perseguir a Zefa, notória ladra internacional de origem brasileira que atua mundo afora desde que ela roubou a taça Jules Rimet com seu pai (um quinto integrante do grupo que a PF nunca divulgou e que escapou), em 1983 na tenra idade de 10 anos. Desde então ela tem aplicado roubos cada vez mais ousados pelo Brasil e o mundo e a nossa dedicada PF nunca deixou de persegui-la décadas afora. Será o nosso detetive intrépido a pessoa que finalmente irá apreender está elusiva ladra?
 
-Este jogo será criado em 3 versões diferentes. Uma para se jogar na Linha de Comando de qualquer computador. Uma para se jogar em qualquer computador com uma interface gráfica. E uma para se jogar em um Raspberry Pi com uma interface gráfica e botões físicos e e um display de 7".
+Este jogo será criado em 3 versões diferentes. Uma para se jogar na Linha de Comando de qualquer computador. Uma para se jogar em qualquer computador com uma interface gráfica. E uma para se jogar em um Raspberry Pi com uma interface gráfica e botões físicos e um display de 7".
 
 Você educador pode escolher qualquer um destes projetos, ou todos. Ou pode até escolher que seus alunos simplesmente joguem o jogo. Nos tutoriais vou mostrar como alterar a base de dados para poder colocar informação relevante aos seus estudos.
 

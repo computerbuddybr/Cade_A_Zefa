@@ -6,9 +6,9 @@ class Cidade:
     def __init__(self, conexaoBD, id, destino):
         """
         Inicia a classe cidade
-        param: conexãoBD: o objeto de conexão à base de dados
-        param: id: o id da Cidade buscada
-        param: destino: o indíce no array cidades da cidade de destino
+        :param: conexãoBD: o objeto de conexão à base de dados
+        :param: id: o id da Cidade buscada
+        :param: destino: o indíce no array cidades da cidade de destino
         """
         self.destino = destino
         self.conexaoBD = conexaoBD
@@ -118,7 +118,7 @@ class Cidade:
     def criandoAsPistas(self, destinos):
         """
         Atribuindo as pistas aos locais
-        :param destinos: a cidade para a qual a Zefa foi partindo desta cidade, e a qual as pistas dirão respeito
+        :param destinos: o array com todas as cidades do caso para poder verificar a cidade para a qual a Zefa partiu desta cidade, e a qual as pistas dirão respeito a está cidade
         :return: atribuição das pistas a propriedade pista de cada Local
         """
         #Variáveis de controle
@@ -206,7 +206,7 @@ class Cidade:
 
     def embaralharDestinos(self):
         """
-        Embaralha os destinos para que não fique previsivel a rota
+        Embaralha os destinos para que não fique previsivel a rota (de modo similar, você pode verificar o método do Python shuffle que têm o mesmo princípio)
         :return:
         """
         destinosTemp = []

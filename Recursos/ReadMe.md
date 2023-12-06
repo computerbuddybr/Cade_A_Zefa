@@ -28,6 +28,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 - [Playlist com dicas relevantes]()
 - [Playlist com tutoriais]()
+
 - [Site com os pinos do Raspberry Pi](https://pinout.xyz/)
 - Pinagem: ![Pinos do Raspberry Pi](imagens/pinos-raspberrypi4.jpg)
 
@@ -54,6 +55,34 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Gerador de favicon - Favicon.cc](https://www.favicon.cc/)
 - [Gerador de favicon - Favicon-generator](https://www.favicon-generator.org/)
 - [Inno Setup](https://jrsoftware.org/isinfo.php)
+
+# Índice dos vídeos tutoriais
+## Seção 01 - Apresentação do Projeto
+- [Aula 01 - Apresentação]()
+- [Aula 02 - Explicando como ensino]()
+- [Aula 03 - Apresentando os recursos]()
+- [Aula 04 - Porque o nome Zefa]()
+## Seção 02 - Apresentação da Lógica do Jogo
+- [Aula 05 - Apresentacao resultado final jogo]()
+- [Aula 06- Instalando SQLite]()
+- [Aula 07 - Lógica da base de dados]()
+## Seção 03 - Apresentando e Alterando a base de dados
+- [Aula 08 - Alterando a de dados]()
+## Seção 04 - Modelo - Lógica da criação do Jogo
+- [Aula 09 - Apresentando o código]()
+- [Aula 10 - Conectando na base de dados]()
+- [Aula 11 - Lendo a Base]()
+- [Aula 12 - Classe Cidade]()
+- [Aula 13 - Classe Local]()
+- [Aula 14 - Classe Jogo]()
+- [Aula 15 - Classe Jogo - CriarPistasCidades]()
+- [Aula 16 - Classe Jogo - Criar Pistas Cidade Falsa e Final]()
+- [Aula 17 - Classe Jogo - Criar Destinos]()
+## Seção 05 - Visualização e Fluxo de Jogo na Linha de Comando
+- [Aula 18 - Fluxo de Jogo na Linha de Comando]()
+## Seção 06 - Visualização e Fluxo de Jogo na Interface de Desktop (Computador)
+## Seção 07 - Visualização e Fluxo de Jogo na Interface para Raspberry Pi com Botões
+## Seção 08 - Criando o executável e instalador
 
 # Hardware usado nos projetos
 

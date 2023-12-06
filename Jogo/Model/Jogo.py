@@ -109,7 +109,7 @@ class Jogo:
 
     def embaralharCidades(self):
         """
-        Embaralha as cidades para que não fique previsivel a rota
+        Embaralha as cidades para que não fique previsivel a rota, (de modo similar, você pode verificar o método do Python shuffle que têm o mesmo princípio)
         :return:
         """
         cidadesTemp = []

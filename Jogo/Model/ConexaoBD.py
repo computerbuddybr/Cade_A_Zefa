@@ -7,6 +7,7 @@ class ConexaoBD:
     Atributos:
     ConexaoSQLite: conexão com o SQLite
     cursor: cursor para executar as buscas (queries)
+    conectad: booleano que indica se há uma conexão
     """
     erro = ""
     def __init__(self):
