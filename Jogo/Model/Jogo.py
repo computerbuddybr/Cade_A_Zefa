@@ -25,7 +25,7 @@ class Jogo:
         # Sorteando os indices das cidades
         if len(resultados) > 0:
             for indiceCidade in range(0,9):
-                indice = random.randint(0, len(resultados) - 1)
+                indice = random.randint(0, len(resultados) - 1) # Aqui decidi não usar a função choice, também da biblioteca random, pois além de sortear quero fazer pop no elemento. Mas se te interessar você pode ir descobrir mais sobre essa função na documentação do Python em: https://docs.python.org/3/library/random.html#random.choice
                 print(resultados[indice][0])
                 indicesCidades.append(resultados[indice]["pk_id_cidade"])
                 resultados.pop(indice)

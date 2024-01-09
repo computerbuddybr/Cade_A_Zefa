@@ -1,4 +1,4 @@
-# Cadê a Zefa Gente!
+# :mag: Cadê a Zefa Gente!
 ## Tutorial de Jogo educacional em Tkinter para Desktop e Raspberry Pi
 
 ### Informações
@@ -24,6 +24,8 @@ Os recursos para o tutorial se encontram na pasta [Recursos](Recursos/), onde vo
 Além disso, para quem quer adaptar a base de dados para si, na pasta [BaseVazia](Recursos/BaseVazia/), você encontra uma base que contém somente as tabelas, mas sem a informação, para adicionar a informação que quiser.
 
 A pasta [DBModelagem](Recursos/DBModelagem/) possui o modelo da base de dados em formato .mwb, além de arquivo com o DDL da base para quem quiser montar a base do zero e dois arquivos de ajuda para popular os continentes e países com sua configuração em Outubro de 2023.
+
+E tem um executável para Windows em [ZipComExecutavelDoJogo](Recursos/ZipComExecutavelDoJogo/).
 
 ### O Projeto
 

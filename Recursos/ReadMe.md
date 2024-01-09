@@ -38,7 +38,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 - [Site Orange Pi](http://www.orangepi.org/)
 
-- [Site BanaPi](https://www.banana-pi.org/)
+- [Site BananaPi](https://www.banana-pi.org/)
 
 - [Documentação Biblioteca Python Rpi.GPIO](https://pypi.org/project/RPi.GPIO/)
 
@@ -67,22 +67,40 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Aula 06- Instalando SQLite]()
 - [Aula 07 - Lógica da base de dados]()
 ## Seção 03 - Apresentando e Alterando a base de dados
-- [Aula 08 - Alterando a de dados]()
+- [Aula 08 - Para quem só quer alterar a base de dados ou jogar o jogo]()
+- [Aula 09 - Alterando a de dados]()
 ## Seção 04 - Modelo - Lógica da criação do Jogo
-- [Aula 09 - Apresentando o código]()
-- [Aula 10 - Conectando na base de dados]()
-- [Aula 11 - Lendo a Base]()
-- [Aula 12 - Classe Cidade]()
-- [Aula 13 - Classe Local]()
-- [Aula 14 - Classe Jogo]()
-- [Aula 15 - Classe Jogo - CriarPistasCidades]()
-- [Aula 16 - Classe Jogo - Criar Pistas Cidade Falsa e Final]()
-- [Aula 17 - Classe Jogo - Criar Destinos]()
+- [Aula 10 - Apresentando o código]()
+- [Aula 11 - Conectando na base de dados]()
+- [Aula 12 - Lendo a Base]()
+- [Aula 13 - Classe Cidade]()
+- [Aula 14 - Classe Local]()
+- [Aula 15 - Classe Jogo]()
+- [Aula 16 - Classe Jogo - CriarPistasCidades]()
+- [Aula 17 - Classe Jogo - Criar Pistas Cidade Falsa e Final]()
+- [Aula 18 - Classe Jogo - Criar Destinos]()
 ## Seção 05 - Visualização e Fluxo de Jogo na Linha de Comando
-- [Aula 18 - Fluxo de Jogo na Linha de Comando]()
+- [Aula 19 - Fluxo de Jogo na Linha de Comando - Parte I]()
+- [Aula 20 - Fluxo de Jogo na Linha de Comando - Parte II]()
 ## Seção 06 - Visualização e Fluxo de Jogo na Interface de Desktop (Computador)
+ - [Aula 21 - Interface Desktop - Haversine e a função de Calcular Tempo de Voo]()
+ - [Aula 22 - Interface Desktop - Criando a janela de aplicativo]()
+ - [Aula 23 - Interface Desktop - Classe Elementos]()
+ - [Aula 24 - Interface Desktop - Criando os frames e o resto da Janela Principal]()
+ - [Aula 25 - Interface Desktop - A janela Menu - Apresentação da lógica das janelas]()
+ - [Aula 26 - Interface Desktop - As outras janelas]()
+ - [Aula 27 - Interface Desktop - Finalizando o Fluxo de Jogo]()
 ## Seção 07 - Visualização e Fluxo de Jogo na Interface para Raspberry Pi com Botões
+ - [Aula 28 - Interface Botões- Instalação Raspberry Pi]()
+ - [Aula 29 - Interface Botões - Diferença entre um Microcontrolador e um Single Board Computer]()
+ - [Aula 30 - Interface Botões - Alternativas ao Raspberry Pi]()
+ - [Aula 31 - Interface Botões - Como vou mostrar o jogo]()
+ - [Aula 32 - Interface Botões - Código para receber a escolha]()
+ - [Aula 33 - Interface Botões - Testando os botões]()
+ - [Aula 34 - Interface Botões - Interface gráfica no Raspberry Pi]()
 ## Seção 08 - Criando o executável e instalador
+  - [Aula 35 - Criando o executável]()
+  - [Aula 36 - Criando um instalador para Windows]()
 
 # Hardware usado nos projetos
 

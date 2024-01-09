@@ -43,7 +43,7 @@ class Cidade:
 
             if quantidadeDeCuriosidades > 1:
                 indice = random.randint(0, quantidadeDeCuriosidades - 1)
-                self.curiosidade = curiosidades[indice]["curiosidade"]
+                self.curiosidade = curiosidades[indice]["curiosidade"] # Outra opção aqui é usar a função choice da biblioteca random que retorna um elemento de uma sequência não vazia de modo aleatório. Se quiser saber mais dê uma olhada na documentação: https://docs.python.org/3/library/random.html#random.choice
             else:
                 self.curiosidade = curiosidades[0]["curiosidade"]
             #Criando os locais desta cidade - as pistas serão atribuidas a estes locais na classe Jogo
