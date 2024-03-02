@@ -26,7 +26,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 # Recursos
 
-- [Playlist com os tutoriais](https://studio.youtube.com/playlist/PLhx-V5qg9T6RO1tbo4svEUJkJL4f0R207/edit)
+- [Playlist com os tutoriais](https://www.youtube.com/playlist?list=PLhx-V5qg9T6RO1tbo4svEUJkJL4f0R207)
 
 - [Playlist com dicas que podem ser úteis](https://www.youtube.com/playlist?list=PLhx-V5qg9T6SrWJsaMhg661pZ32LlD5aO)
 
