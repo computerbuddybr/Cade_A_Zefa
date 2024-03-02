@@ -1,7 +1,7 @@
 from View.Display7.Constantes import Estilos, Elementos
 class Info:
     """
-    Mostra a informação final
+    Esta classe mostra a informação final
     """
     def __init__(self, janela):
         """

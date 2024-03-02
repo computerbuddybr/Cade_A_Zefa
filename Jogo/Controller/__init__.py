@@ -1,3 +1,3 @@
 """
-Classes que controlam o fluxo do jogo
+Estas classes que controlam o fluxo do jogo
 """

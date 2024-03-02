@@ -13,6 +13,9 @@ from View.Display7.Info import Info
 from View.Display7.Menu import Menu
 from View.Display7.Inicio import Inicio
 class Display7:
+    """
+    Esta classe controla a visualização para o display de 7 polegadas.
+    """
     def __init__(self):
         # Variável que vai receber a escolha feita. Está variável vai ser usada pelo Fluxo de Jogo
         # Iniciando o jogo

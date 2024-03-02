@@ -1,7 +1,7 @@
 from View.Display7.Constantes import Estilos, Elementos
 class InfoComEscolha:
     """
-    Mostra as informações de opções com escolhas como Investigar e Viajar e o principal
+    Esta classe mostra as informações de opções com escolhas como Investigar e Viajar e o principal
     """
     def __init__(self, janela, tipo):
         """

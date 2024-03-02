@@ -3,7 +3,7 @@ from Model.Jogo import Jogo
 
 class FluxoDeJogoLC:
     """
-    Classe que controla o fluxo do jogo
+    Esta classe que controla o fluxo do jogo
     """
 
     def __init__(self, janela):

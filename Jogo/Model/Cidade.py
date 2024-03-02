@@ -3,7 +3,7 @@ import haversine as hs
 
 from Model.Local import Local
 class Cidade:
-    def __init__(self, conexaoBD, id, destino):
+    def __init__(self, conexaoBD, id_cidade, destino):
         """
         Inicia a classe cidade
         :param: conexãoBD: o objeto de conexão à base de dados
@@ -17,7 +17,7 @@ class Cidade:
         self.localAtual = ""
 
         sql = f"select * from cidades as c INNER JOIN paises as p ON (c.fk_id_pais = p.pk_id_pais) where c.pk_id_cidade =  :id"
-        parametros = {"id": id}
+        parametros = {"id": id_cidade}
         resultado = self.conexaoBD.lerDadosParam(sql, parametros)
 
 

@@ -3,7 +3,7 @@ import traceback # é uma boa biblioteca para fazer debugging
 
 class ConexaoBD:
     """
-    Faz a conexão com a base de dados
+    Está classe faz a conexão com a base de dados
     Atributos:
     ConexaoSQLite: conexão com o SQLite
     cursor: cursor para executar as buscas (queries)

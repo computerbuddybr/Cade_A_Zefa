@@ -2,7 +2,7 @@ from Controller.FluxoDeJogoComp import FluxoDeJogoComp
 # import RPi.GPIO as pi
 class FluxoDeJogoBotoes7(FluxoDeJogoComp):
     """
-    Classe que controla o fluxo do jogo
+    Esta classe que controla o fluxo do jogo
     """
 
     def __init__(self, janela):

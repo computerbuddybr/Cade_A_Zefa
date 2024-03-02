@@ -1,7 +1,7 @@
 from View.Computador.Constantes import Estilos, Elementos
 class InfoSemEscolha:
     """
-    Mostra a informação de opções sem escolha como Destinos
+    Esta classe mostra a informação de opções sem escolha como Destinos
     """
     def __init__(self, janela):
         """

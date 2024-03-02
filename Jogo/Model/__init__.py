@@ -1,3 +1,3 @@
 """
-Classes que lidam com os Dados
+Estas classes que lidam com os Dados
 """

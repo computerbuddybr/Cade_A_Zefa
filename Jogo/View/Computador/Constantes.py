@@ -1,5 +1,8 @@
 import tkinter as tk
 class Estilos:
+    """
+    Classe com as constantes de estilo.
+    """
     FUNDO = "#6e09e2"
     FRAME = "#AA7DE3"
     INFO = "#DE97FA"

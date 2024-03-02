@@ -1,3 +1,3 @@
 """
-Classes que lidam com a visualização na Linha de Comando.
+Esta classe lida com a visualização na Linha de Comando.
 """

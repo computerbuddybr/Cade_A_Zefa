@@ -1,7 +1,7 @@
 from View.Computador.Constantes import Estilos, Elementos
 class Inicio:
     """
-    Mostra a informação inicial
+    Esta classe mostra a informação inicial
     """
     def __init__(self, janela):
         """

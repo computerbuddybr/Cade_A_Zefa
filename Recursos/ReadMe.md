@@ -5,18 +5,18 @@ Um dos grandes problemas que vimos é que é difícil para uma pessoa iniciante 
 Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base SQLite. Então você vai precisar saber um pouco de python, bem pouco de configuração de um Raspberry Py e um mínimo de SQL. Então aqui em baixo temos alguns links para vocês estudarem antes de começarem o projeto se ainda não conhecerem esses assuntos.
 
 # Para usar nosso projeto você precisará de conhecimentos de:
-- Python: 
+- ### Python: 
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 1](https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6)
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 2](https://www.youtube.com/watch?v=nJkVHusJp6E&list=PLHz_AreHm4dk_nZHmxxf_J0WRAqy5Czye)
     - [Curso Gratuito de Python Curso em Vídeo Gustavo Guanabara Módulo 3](https://www.youtube.com/watch?v=0LB3FSfjvao&list=PLHz_AreHm4dksnH2jVTIVNviIMBVYyFnH)
 
     - **Requisitos mínimos:** variáveis, funções, tipos de dados, coleções, estrutras condicionais, estruturas de repetição (laços), classes e objetos
 
-- Básico de SQL 
+- ### Básico de SQL 
     - [Curso Gratuito de MySQL Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=Ofktsne-utM&list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r) - Ah, mas este não é de SQLite. Não se preocupe. Os comandos e ideias são os mesmos. Apenas a sintaxe é um pouco diferente. Mas você vai conseguir acompanhar tranquilamente. o SQLite é mais simples que o MySQL, permite menos coisas, mas eu vou falar disso quando falar da base de dados.
     - **Requisitos mínimos:** SELECT, JOIN, WHERE
 
-- Básico de configuração de Raspberry Pi: 
+- ### Básico de configuração de Raspberry Pi: 
     - [Curso Gratuito de Raspberry Pi Curso em Vídeo Gustavo Guanabara](https://www.youtube.com/watch?v=CbIeFxsfgzk&list=PLHz_AreHm4dnGZ_nudmN4rvyLk2fHFRzy&index=2)   
 
     - [Curso Gratuito de Raspberry Pi do Brincando com ideias](https://www.youtube.com/watch?v=VcZ-vBWqFbg&list=PL7CjOZ3q8fMc7J7aoYrvza52URffS6WRq&index=9) - este curso está mais antigo mas o que achei melhor do que o outro curso foi a explicação do GPIO. Os vídeos 8 e 10. Então recomendo assistir ao curso do Gustavo Guanabara para configuração do Raspberry Pi e depois assistir os vídeos 8 e 10 deste curso para entender o GPIO.
@@ -26,8 +26,10 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 # Recursos
 
-- [Playlist com dicas relevantes]()
-- [Playlist com tutoriais]()
+- [Playlist com os tutoriais](https://studio.youtube.com/playlist/PLhx-V5qg9T6RO1tbo4svEUJkJL4f0R207/edit)
+
+- [Playlist com dicas que podem ser úteis](https://www.youtube.com/playlist?list=PLhx-V5qg9T6SrWJsaMhg661pZ32LlD5aO)
+
 
 - [Site com os pinos do Raspberry Pi](https://pinout.xyz/)
 - Pinagem: ![Pinos do Raspberry Pi](imagens/pinos-raspberrypi4.jpg)

@@ -1,8 +1,8 @@
 from View.Computador.Constantes import Estilos, Elementos
-class Menu():
+class Menu:
     def __init__(self, janela):
         """
-        Mostra o Menu Principal
+        Esta classe mostra o Menu Principal
         :param janela: A janela do app
         :param titulo: O título a ser mostrado
         :param texto:  O texto a ser mostrado

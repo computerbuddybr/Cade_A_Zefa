@@ -1,7 +1,7 @@
 import random
 class Local:
     """
-    Classe que representa o local de pista
+    Esta classe que representa o local de pista
     """
     def __init__(self, conexaoBD, id, local, bandeira, pistaCidade, moeda):
         self.zefaEstaAqui = False

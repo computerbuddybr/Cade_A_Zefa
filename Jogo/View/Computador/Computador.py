@@ -13,6 +13,9 @@ from View.Computador.Info import Info
 from View.Computador.Menu import Menu
 from View.Computador.Inicio import Inicio
 class Computador:
+    """
+    Esta classe controla a visualização do jogo para desktop.
+    """
     def __init__(self):
         # Variável que vai receber a escolha feita. Está variável vai ser usada pelo Fluxo de Jogo
         # Iniciando o jogo

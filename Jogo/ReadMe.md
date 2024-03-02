@@ -4,7 +4,7 @@
 ### Informações
 - **Autora:** Adriana Laura Cerdeira
 - **Projeto Final de Conclusão de Curso em Enegenharia de Computação - Universidade Anhembi Morumbi**
-- **Outros integrantes do grupo:** Andre de Almeida Alves Batista, Gabriel Campos de Paula, Janderson Barbosa Braz, Thiago Henrique da Cruz
+- **Outros integrantes do grupo:** Diego Luiz Godoy Portalupi, Leonardo Bueno Santos, Hudson Gustavo Ferreira, Mikaelle Cristina Iosi
 
 ## Configurações do Projeto
 
