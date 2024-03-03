@@ -28,7 +28,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 - [Playlist com os tutoriais](https://www.youtube.com/playlist?list=PLhx-V5qg9T6RO1tbo4svEUJkJL4f0R207)
 
-- [Playlist com dicas que podem ser úteis](https://www.youtube.com/playlist?list=PLhx-V5qg9T6SrWJsaMhg661pZ32LlD5aO)
+- [Playlist com dicas que podem ser úteis](https://www.youtube.com/playlist?list=PLhx-V5qg9T6TCWFi0yaOeVUxbQUKfS903)
 
 
 - [Site com os pinos do Raspberry Pi](https://pinout.xyz/)
@@ -63,17 +63,17 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 - [Aula 01 - Apresentação](https://youtu.be/LeJLGBOfmYs)
 - [Aula 02 - Explicando como ensino](https://youtu.be/keXi-uofNec)
 - [Aula 03 - Apresentando os recursos](https://youtu.be/NjfztUmxdvs)
-- [Aula 04 - Porque o nome Zefa]()
+- [Aula 04 - Porque o nome Zefa](https://youtu.be/tkQWxm3vBCk)
 ## Seção 02 - Apresentação da Lógica do Jogo
-- [Aula 05 - Apresentacao resultado final jogo]()
-- [Aula 06- Instalando SQLite]()
-- [Aula 07 - Lógica da base de dados]()
+- [Aula 05 - Apresentacao resultado final jogo](https://youtu.be/9OvLV4ftwc0)
+- [Aula 06- Instalando SQLite](https://youtu.be/sztWK14a7pw)
+- [Aula 07 - Lógica da base de dados](https://youtu.be/ACioO1E7s24)
 ## Seção 03 - Apresentando e Alterando a base de dados
-- [Aula 08 - Para quem só quer alterar a base de dados ou jogar o jogo]()
-- [Aula 09 - Alterando a de dados]()
+- [Aula 08 - Para quem só quer alterar a base de dados ou jogar o jogo](https://youtu.be/Bk2rtuyss1s)
+- [Aula 09 - Alterando a de dados](https://youtu.be/GizORStslLE)
 ## Seção 04 - Modelo - Lógica da criação do Jogo - Assista este Módulo!!
 - [Aula 10 - Apresentando o código]()
-- [Aula 11 - Conectando na base de dados]()
+- [Aula 11 - Iniciando o Model e conectando na base de dados]()
 - [Aula 12 - Lendo a Base]()
 - [Aula 13 - Classe Cidade]()
 - [Aula 14 - Classe Local]()

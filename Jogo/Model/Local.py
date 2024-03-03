@@ -20,7 +20,7 @@ class Local:
 
 
     def criarPersonagem(self):
-        sql = f"select * from personagens as p INNER JOIN local_personagem as lp on (p.pk_id_personagem = lp.fk_id_personagem) where fk_id_local = :id"
+        sql = f"select * from personagens as p INNER JOIN local_personagem as lp on (p.pk_id_personagem = lp.fk_id_personagem) where lp.fk_id_local = :id"
         parametros = {"id": self.id}
         personagens = self.conexaoBD.lerDadosParam(sql, parametros)
         # print(curiosidades)
