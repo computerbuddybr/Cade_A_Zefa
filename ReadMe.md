@@ -16,9 +16,10 @@ Este projeto foi desenvolvido como o nosso TCC e tem como premissa a disponibili
 
 Este projeto não tem fins lucrativos, é feito com a intenção de fornecer um material de ensino modular para professores que queiram utilizá-lo. Ele é muito adaptável, o professor pode escolher adotá-lo na integra ou em partes. E o jogo escolhido também é educacional, para que depois possa ser usado para jogar e aprender.
 
-Recomendo assistir ao vídeo introdutório abaixo:
+Recomendo assistir ao vídeo introdutório:
+[Aula 01 - Apresentação](https://youtu.be/LeJLGBOfmYs)
 
-Os vídeos tutoriais estão disponíveis no YouTube e podem ser acessados através do links para a playlist abaixo:
+[Os vídeos tutoriais estão disponíveis no YouTube e podem ser acessados aqui.](https://www.youtube.com/playlist?list=PLhx-V5qg9T6RO1tbo4svEUJkJL4f0R207)
 
 O código do jogo está neste mesmo repositório, na pasta [Jogo](Jogo/).
 
