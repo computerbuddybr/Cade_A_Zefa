@@ -4,7 +4,10 @@
 ### Informações
 - **Autora:** Adriana Laura Cerdeira
 - **Projeto Final de Conclusão de Curso em Enegenharia de Computação - Universidade Anhembi Morumbi**
-- **Outros integrantes do grupo:** Diego Luiz Godoy Portalupi, Leonardo Bueno Santos, Hudson Gustavo Ferreira, Mikaelle Cristina Iosi
+- **Outros integrantes do grupo de projeto final:** Diego Luiz Godoy Portalupi, Leonardo Bueno Santos, Hudson Gustavo Ferreira, Mikaelle Cristina Iosi
+- **Outros integrantes do grupo de pré-projeto final:** Andre de Almeida Alves Batista, Gabriel Campos de Paula, Janderson Barbosa Braz, Thiago Henrique da Cruz
+
+
 
 
 ### Bem vindos, bem vindas ao nosso Projeto de Conclusão de Curso em Engenharia de Computação!

@@ -60,9 +60,9 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 
 # Índice dos vídeos tutoriais
 ## Seção 01 - Apresentação do Projeto
-- [Aula 01 - Apresentação]()
-- [Aula 02 - Explicando como ensino]()
-- [Aula 03 - Apresentando os recursos]()
+- [Aula 01 - Apresentação](https://youtu.be/LeJLGBOfmYs)
+- [Aula 02 - Explicando como ensino](https://youtu.be/keXi-uofNec)
+- [Aula 03 - Apresentando os recursos](https://youtu.be/NjfztUmxdvs)
 - [Aula 04 - Porque o nome Zefa]()
 ## Seção 02 - Apresentação da Lógica do Jogo
 - [Aula 05 - Apresentacao resultado final jogo]()
@@ -71,7 +71,7 @@ Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base S
 ## Seção 03 - Apresentando e Alterando a base de dados
 - [Aula 08 - Para quem só quer alterar a base de dados ou jogar o jogo]()
 - [Aula 09 - Alterando a de dados]()
-## Seção 04 - Modelo - Lógica da criação do Jogo
+## Seção 04 - Modelo - Lógica da criação do Jogo - Assista este Módulo!!
 - [Aula 10 - Apresentando o código]()
 - [Aula 11 - Conectando na base de dados]()
 - [Aula 12 - Lendo a Base]()
