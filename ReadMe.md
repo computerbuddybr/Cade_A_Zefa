@@ -6,6 +6,7 @@
 - **Projeto Final de Conclusão de Curso em Enegenharia de Computação - Universidade Anhembi Morumbi**
 - **Outros integrantes do grupo de projeto final:** Diego Luiz Godoy Portalupi, Leonardo Bueno Santos, Hudson Gustavo Ferreira, Mikaelle Cristina Iosi
 - **Outros integrantes do grupo de pré-projeto final:** Andre de Almeida Alves Batista, Gabriel Campos de Paula, Janderson Barbosa Braz, Thiago Henrique da Cruz
+ **Nota Final**: 10
 
 
 
@@ -55,3 +56,6 @@ A Zefa é uma ladra internacional. Ela é perigosa. Mas ela não deixa de ser br
 O código e tutoriais está sendo fornecido de forma gratuita para ser usado baixo as regras da licença GNU GPL (Licença Geral Pública). Você pode usar e distribuir este material à vontade. Você não pode vendê-lo ou usá-lo para fins lucrativos. Não foi criado para fins lucrativos, mas para fins educacionais.
 
 Você e qualquer pessoa à qual você venha a entregar este material isentam os autores deste projeto de responsabilidade sobre o uso deste jogo e tutorial, sendo você o único responsável por qualquer uso que você faça do material contido aqui neste repositório e nos links associados, e qualquer consequência deste uso.
+
+### Isenção
+Os autores deste trabalho não são responsáveis por qualquer dano causado ao baixar arquivos deste projeto.
