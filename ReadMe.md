@@ -58,4 +58,4 @@ O código e tutoriais está sendo fornecido de forma gratuita para ser usado bai
 Você e qualquer pessoa à qual você venha a entregar este material isentam os autores deste projeto de responsabilidade sobre o uso deste jogo e tutorial, sendo você o único responsável por qualquer uso que você faça do material contido aqui neste repositório e nos links associados, e qualquer consequência deste uso.
 
 ### Isenção
-Os autores deste trabalho não são responsáveis por qualquer dano causado ao baixar arquivos deste projeto.
+Os autores deste trabalho e repositório não são responsáveis por qualquer dano causado ao baixar arquivos deste projeto.
