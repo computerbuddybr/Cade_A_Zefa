@@ -5,7 +5,7 @@ Um dos grandes problemas que vimos é que é difícil para uma pessoa iniciante 
 Este projeto foi montado usando um Raspberry Pi 4, linguagem Python e uma base SQLite. Então você vai precisar saber um pouco de python, bem pouco de configuração de um Raspberry Py e um mínimo de SQL. Então aqui em baixo temos alguns links para vocês estudarem antes de começarem o projeto se ainda não conhecerem esses assuntos.
 
 ### Isenção
-Os autores deste trabalho não são responsáveis por qualquer dano causado ao baixar arquivos deste projeto.
+Os autores deste trabalho e repositório não são responsáveis por qualquer dano causado ao baixar arquivos deste projeto.
 
 # Para usar nosso projeto você precisará de conhecimentos de:
 - ### Python: 
